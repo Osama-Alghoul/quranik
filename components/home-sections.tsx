@@ -1,7 +1,15 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { BookOpen, Headphones, GraduationCap, Users, ClipboardCheck, Calendar, ArrowLeft } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import Image from "next/image";
+import Link from "next/link";
+import {
+  BookOpen,
+  Headphones,
+  GraduationCap,
+  Users,
+  ClipboardCheck,
+  Calendar,
+  ArrowLeft,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
   return (
@@ -20,63 +28,75 @@ export default function HeroSection() {
 
       <div className="relative mx-auto flex max-w-7xl flex-col items-center px-4 py-24 text-center lg:px-8 lg:py-36">
         <span className="mb-6 inline-block rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
-          {'أكاديمية تعليمية متخصصة'}
+          {"أكاديمية تعليمية متخصصة"}
         </span>
         <h1 className="max-w-4xl text-balance text-3xl font-bold leading-tight text-primary-foreground md:text-5xl lg:text-6xl">
-          {'تعلم القرآن الكريم بمرشدين متخصصين — أونلاين وبخطوات منظمة'}
+          {"تعلم القرآن الكريم بمرشدين متخصصين - أونلاين وبخطوات منظمة"}
         </h1>
         <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-primary-foreground/80">
-          {'قرآنيك أكاديمية تعليمية إلكترونية متخصصة في تعليم القرآن وعلومه للأطفال والشباب والبالغين، عبر نظام تعليمي منظم وتقارير متابعة بعد كل لقاء.'}
+          {
+            "قرآنيك أكاديمية تعليمية إلكترونية متخصصة في تعليم القرآن وعلومه للأطفال والشباب والبالغين، عبر نظام تعليمي منظم وتقارير متابعة بعد كل لقاء."
+          }
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <Button size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90" asChild>
+          <Button
+            size="lg"
+            variant="default"
+            className="bg-accent text-accent-foreground hover:bg-accent/90"
+            asChild
+          >
             <Link href="/contact">
               ابدأ الآن
               <ArrowLeft className="mr-2 h-4 w-4" />
             </Link>
           </Button>
-          <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-primary-foreground/30 text-primary hover:bg-primary-foreground/10"
+            asChild
+          >
             <Link href="/programs">استعرض البرامج</Link>
           </Button>
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export function WhyQuranikSection() {
   const features = [
     {
       icon: BookOpen,
-      title: 'منهج منظم وخطط دراسية واضحة',
-      description: 'خطط تعليمية مدروسة تناسب كل مستوى وتضمن التقدم المستمر.',
+      title: "منهج منظم وخطط دراسية واضحة",
+      description: "خطط تعليمية مدروسة تناسب كل مستوى وتضمن التقدم المستمر.",
     },
     {
       icon: GraduationCap,
-      title: 'معلمون معتمدون بخبرة تربوية',
-      description: 'نخبة من المعلمين الحاصلين على إجازات وشهادات معتمدة.',
+      title: "معلمون معتمدون بخبرة تربوية",
+      description: "نخبة من المعلمين الحاصلين على إجازات وشهادات معتمدة.",
     },
     {
       icon: ClipboardCheck,
-      title: 'تقارير متابعة بعد كل لقاء',
-      description: 'نظام متابعة دقيق يقيس التقدم ويحدد نقاط التحسين.',
+      title: "تقارير متابعة بعد كل لقاء",
+      description: "نظام متابعة دقيق يقيس التقدم ويحدد نقاط التحسين.",
     },
     {
       icon: Calendar,
-      title: 'مرونة في المواعيد والدراسة أونلاين',
-      description: 'اختر الوقت المناسب لك وتعلم من أي مكان في العالم.',
+      title: "مرونة في المواعيد والدراسة أونلاين",
+      description: "اختر الوقت المناسب لك وتعلم من أي مكان في العالم.",
     },
-  ]
+  ];
 
   return (
     <section className="bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="mb-16 text-center">
           <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-wider text-accent">
-            {'لماذا قرآنيك؟'}
+            {"لماذا قرآنيك؟"}
           </span>
           <h2 className="text-balance text-3xl font-bold text-foreground md:text-4xl">
-            {'تجربة تعليمية متكاملة ومميزة'}
+            {"تجربة تعليمية متكاملة ومميزة"}
           </h2>
         </div>
 
@@ -100,47 +120,47 @@ export function WhyQuranikSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export function ProgramsPreviewSection() {
   const programs = [
     {
       icon: BookOpen,
-      title: 'حفظ القرآن',
-      description: 'خطة تدريجية تناسب مستوى الطالب مع متابعة مستمرة.',
+      title: "حفظ القرآن",
+      description: "خطة تدريجية تناسب مستوى الطالب مع متابعة مستمرة.",
     },
     {
       icon: Headphones,
-      title: 'تصحيح التلاوة',
-      description: 'تصحيح النطق والأداء مع معلمين متخصصين.',
+      title: "تصحيح التلاوة",
+      description: "تصحيح النطق والأداء مع معلمين متخصصين.",
     },
     {
       icon: GraduationCap,
-      title: 'التجويد',
-      description: 'إتقان أحكام التجويد نظريًا وتطبيقيًا.',
+      title: "التجويد",
+      description: "إتقان أحكام التجويد نظريًا وتطبيقيًا.",
     },
     {
       icon: BookOpen,
-      title: 'الحديث والفقه',
-      description: 'تعلم أساسيات الحديث النبوي والفقه الإسلامي.',
+      title: "الحديث والفقه",
+      description: "تعلم أساسيات الحديث النبوي والفقه الإسلامي.",
     },
     {
       icon: Users,
-      title: 'برامج الأطفال',
-      description: 'برامج تعليمية ممتعة مصممة خصيصًا للأطفال.',
+      title: "برامج الأطفال",
+      description: "برامج تعليمية ممتعة مصممة خصيصًا للأطفال.",
     },
-  ]
+  ];
 
   return (
     <section className="bg-secondary py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="mb-16 text-center">
           <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-wider text-accent">
-            {'برامجنا'}
+            {"برامجنا"}
           </span>
           <h2 className="text-balance text-3xl font-bold text-foreground md:text-4xl">
-            {'برامج تعليمية متنوعة تناسب الجميع'}
+            {"برامج تعليمية متنوعة تناسب الجميع"}
           </h2>
         </div>
 
@@ -172,37 +192,37 @@ export function ProgramsPreviewSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export function HowItWorksSection() {
   const steps = [
     {
-      number: '01',
-      title: 'اختر البرنامج المناسب',
-      description: 'استعرض برامجنا المتنوعة واختر ما يناسب مستواك وأهدافك.',
+      number: "01",
+      title: "اختر البرنامج المناسب",
+      description: "استعرض برامجنا المتنوعة واختر ما يناسب مستواك وأهدافك.",
     },
     {
-      number: '02',
-      title: 'اشترك وادفع مرة واحدة',
-      description: 'اشتراك بسيط ودفع لمرة واحدة لكل دورة بدون رسوم مخفية.',
+      number: "02",
+      title: "اشترك وادفع مرة واحدة",
+      description: "اشتراك بسيط ودفع لمرة واحدة لكل دورة بدون رسوم مخفية.",
     },
     {
-      number: '03',
-      title: 'تابع دروسك واستلم تقاريرك',
-      description: 'تعلّم مع معلمك واحصل على تقارير أداء مفصلة بعد كل لقاء.',
+      number: "03",
+      title: "تابع دروسك واستلم تقاريرك",
+      description: "تعلّم مع معلمك واحصل على تقارير أداء مفصلة بعد كل لقاء.",
     },
-  ]
+  ];
 
   return (
     <section className="bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="mb-16 text-center">
           <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-wider text-accent">
-            {'كيف تعمل المنصة؟'}
+            {"كيف تعمل المنصة؟"}
           </span>
           <h2 className="text-balance text-3xl font-bold text-foreground md:text-4xl">
-            {'ثلاث خطوات بسيطة للبدء'}
+            {"ثلاث خطوات بسيطة للبدء"}
           </h2>
         </div>
 
@@ -214,7 +234,9 @@ export function HowItWorksSection() {
                   {step.number}
                 </span>
               </div>
-              <h3 className="mb-3 text-xl font-bold text-foreground">{step.title}</h3>
+              <h3 className="mb-3 text-xl font-bold text-foreground">
+                {step.title}
+              </h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 {step.description}
               </p>
@@ -223,37 +245,39 @@ export function HowItWorksSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export function TestimonialsSection() {
   const testimonials = [
     {
-      name: 'أحمد محمد',
-      role: 'طالب حفظ',
-      quote: 'تجربة رائعة! المعلمون محترفون والمتابعة بعد كل لقاء ساعدتني على التقدم بشكل ملحوظ.',
+      name: "أحمد محمد",
+      role: "طالب حفظ",
+      quote:
+        "تجربة رائعة! المعلمون محترفون والمتابعة بعد كل لقاء ساعدتني على التقدم بشكل ملحوظ.",
     },
     {
-      name: 'فاطمة عبدالله',
-      role: 'أم لطالبتين',
-      quote: 'بناتي يستمتعن بالحصص كثيرًا. البرنامج منظم والتقارير تطمئنني على تقدمهن.',
+      name: "فاطمة عبدالله",
+      role: "أم لطالبتين",
+      quote:
+        "بناتي يستمتعن بالحصص كثيرًا. البرنامج منظم والتقارير تطمئنني على تقدمهن.",
     },
     {
-      name: 'عمر خالد',
-      role: 'طالب تجويد',
-      quote: 'تعلمت أحكام التجويد بشكل عملي ومبسط. أنصح الجميع بهذه المنصة.',
+      name: "عمر خالد",
+      role: "طالب تجويد",
+      quote: "تعلمت أحكام التجويد بشكل عملي ومبسط. أنصح الجميع بهذه المنصة.",
     },
-  ]
+  ];
 
   return (
     <section className="bg-secondary py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="mb-16 text-center">
           <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-wider text-accent">
-            {'آراء الطلاب'}
+            {"آراء الطلاب"}
           </span>
           <h2 className="text-balance text-3xl font-bold text-foreground md:text-4xl">
-            {'ماذا يقول طلابنا'}
+            {"ماذا يقول طلابنا"}
           </h2>
         </div>
 
@@ -265,7 +289,11 @@ export function TestimonialsSection() {
             >
               <div className="mb-4 flex gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="h-4 w-4 fill-accent text-accent" viewBox="0 0 20 20">
+                  <svg
+                    key={i}
+                    className="h-4 w-4 fill-accent text-accent"
+                    viewBox="0 0 20 20"
+                  >
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                 ))}
@@ -274,15 +302,19 @@ export function TestimonialsSection() {
                 {`"${testimonial.quote}"`}
               </p>
               <div>
-                <p className="font-bold text-card-foreground">{testimonial.name}</p>
-                <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                <p className="font-bold text-card-foreground">
+                  {testimonial.name}
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  {testimonial.role}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export function CTASection() {
@@ -299,13 +331,19 @@ export function CTASection() {
       </div>
       <div className="relative mx-auto max-w-3xl px-4 text-center lg:px-8">
         <h2 className="text-balance text-3xl font-bold text-primary-foreground md:text-4xl">
-          {'ابدأ رحلتك في تعلم القرآن اليوم'}
+          {"ابدأ رحلتك في تعلم القرآن اليوم"}
         </h2>
         <p className="mt-4 text-lg leading-relaxed text-primary-foreground/80">
-          {'انضم إلى آلاف الطلاب الذين يتعلمون القرآن الكريم مع قرآنيك بأسلوب منظم ومحترف.'}
+          {
+            "انضم إلى آلاف الطلاب الذين يتعلمون القرآن الكريم مع قرآنيك بأسلوب منظم ومحترف."
+          }
         </p>
         <div className="mt-10">
-          <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90" asChild>
+          <Button
+            size="lg"
+            className="bg-accent text-accent-foreground hover:bg-accent/90"
+            asChild
+          >
             <Link href="/contact">
               سجّل الآن
               <ArrowLeft className="mr-2 h-4 w-4" />
@@ -314,5 +352,5 @@ export function CTASection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
