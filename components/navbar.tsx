@@ -1,31 +1,29 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import Link from "next/link";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const navLinks = [
-  { href: '/', label: 'الرئيسية' },
-  { href: '/about', label: 'من نحن' },
-  { href: '/programs', label: 'البرامج' },
-  { href: '/teachers', label: 'المعلمون' },
-  { href: '/faq', label: 'الأسئلة الشائعة' },
-  { href: '/contact', label: 'تواصل معنا' },
-]
+  { href: "/", label: "الرئيسية" },
+  { href: "/about", label: "من نحن" },
+  { href: "/programs", label: "البرامج" },
+  { href: "/teachers", label: "المعلمون" },
+  { href: "/faq", label: "الأسئلة الشائعة" },
+  { href: "/contact", label: "تواصل معنا" },
+];
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-md">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-            <span className="text-lg font-bold text-primary-foreground">ق</span>
-          </div>
-          <span className="text-xl font-bold text-foreground">قرآنيك</span>
+          <Image src={"/images/logo.png"} alt="Logo" width={50} height={50} />
         </Link>
 
         {/* Desktop Nav */}
@@ -52,7 +50,7 @@ export default function Navbar() {
         <button
           className="lg:hidden"
           onClick={() => setIsOpen(!isOpen)}
-          aria-label={isOpen ? 'إغلاق القائمة' : 'فتح القائمة'}
+          aria-label={isOpen ? "إغلاق القائمة" : "فتح القائمة"}
         >
           {isOpen ? (
             <X className="h-6 w-6 text-foreground" />
@@ -85,5 +83,5 @@ export default function Navbar() {
         </div>
       )}
     </header>
-  )
+  );
 }
