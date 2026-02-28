@@ -1,12 +1,12 @@
-import Navbar from '@/components/navbar'
-import Footer from '@/components/footer'
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 import HeroSection, {
   WhyQuranikSection,
   ProgramsPreviewSection,
   HowItWorksSection,
   TestimonialsSection,
   CTASection,
-} from '@/components/home-sections'
+} from "@/components/home-sections";
 
 export default function HomePage() {
   return (
@@ -22,5 +22,5 @@ export default function HomePage() {
       </main>
       <Footer />
     </>
-  )
+  );
 }
