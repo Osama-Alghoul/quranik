@@ -1,37 +1,37 @@
-import type { Metadata } from 'next'
-import Image from 'next/image'
-import { Eye, Target, Award, Heart } from 'lucide-react'
-import Navbar from '@/components/navbar'
-import Footer from '@/components/footer'
+import type { Metadata } from "next";
+import Image from "next/image";
+import { Eye, Target, Award, Heart } from "lucide-react";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: 'من نحن',
+  title: "من نحن",
   description:
-    'تعرف على رؤية قرآنيك ورسالتها وقيمها في تعليم القرآن الكريم بأسلوب عصري وأصيل.',
-}
+    "تعرف على رؤية قرآنيك ورسالتها وقيمها في تعليم القرآن الكريم بأسلوب عصري وأصيل.",
+};
 
 const values = [
   {
     icon: Award,
-    title: 'الإتقان',
-    description: 'نسعى لتقديم أعلى مستوى من الجودة في التعليم والمتابعة.',
+    title: "الإتقان",
+    description: "نسعى لتقديم أعلى مستوى من الجودة في التعليم والمتابعة.",
   },
   {
     icon: Heart,
-    title: 'الأمانة',
-    description: 'نحمل أمانة تعليم كتاب الله بإخلاص ومسؤولية.',
+    title: "الأمانة",
+    description: "نحمل أمانة تعليم كتاب الله بإخلاص ومسؤولية.",
   },
   {
     icon: Eye,
-    title: 'الوضوح',
-    description: 'نؤمن بالشفافية في المناهج والأسعار والتقارير.',
+    title: "الوضوح",
+    description: "نؤمن بالشفافية في المناهج والأسعار والتقارير.",
   },
   {
     icon: Target,
-    title: 'الاستمرارية',
-    description: 'نبني عادات تعليمية مستدامة تدوم مع الطالب.',
+    title: "الاستمرارية",
+    description: "نبني عادات تعليمية مستدامة تدوم مع الطالب.",
   },
-]
+];
 
 export default function AboutPage() {
   return (
@@ -51,10 +51,10 @@ export default function AboutPage() {
           </div>
           <div className="relative mx-auto max-w-4xl px-4 text-center lg:px-8">
             <h1 className="text-3xl font-bold text-primary-foreground md:text-5xl">
-              {'من نحن'}
+              {"من نحن"}
             </h1>
             <p className="mt-4 text-lg leading-relaxed text-primary-foreground/80">
-              {'تعرف على قصة قرآنيك ورؤيتنا لمستقبل تعليم القرآن الكريم'}
+              {"تعرف على قصة قرآنيك ورؤيتنا لمستقبل تعليم القرآن الكريم"}
             </p>
           </div>
         </section>
@@ -69,10 +69,12 @@ export default function AboutPage() {
                   <Eye className="h-7 w-7 text-primary" />
                 </div>
                 <h2 className="mb-4 text-2xl font-bold text-card-foreground">
-                  {'رؤيتنا'}
+                  {"رؤيتنا"}
                 </h2>
                 <p className="text-base leading-relaxed text-muted-foreground">
-                  {'أن نكون منصة رائدة في تعليم القرآن الكريم وعلومه بأسلوب عصري يجمع بين الأصالة والتقنية، ونصل بالعلم الشرعي إلى كل بيت في العالم.'}
+                  {
+                    "أن نكون منصة رائدة في تعليم القرآن الكريم وعلومه بأسلوب عصري يجمع بين الأصالة والتقنية، ونصل بالعلم الشرعي إلى كل بيت في العالم."
+                  }
                 </p>
               </div>
 
@@ -82,10 +84,12 @@ export default function AboutPage() {
                   <Target className="h-7 w-7 text-accent" />
                 </div>
                 <h2 className="mb-4 text-2xl font-bold text-card-foreground">
-                  {'رسالتنا'}
+                  {"رسالتنا"}
                 </h2>
                 <p className="text-base leading-relaxed text-muted-foreground">
-                  {'توفير تجربة تعليمية منظمة، واضحة، وآمنة تساعد الطالب على التقدم بثقة وثبات في رحلته مع كتاب الله، من خلال معلمين متخصصين ونظام متابعة دقيق.'}
+                  {
+                    "توفير تجربة تعليمية منظمة، واضحة، وآمنة تساعد الطالب على التقدم بثقة وثبات في رحلته مع كتاب الله، من خلال معلمين متخصصين ونظام متابعة دقيق."
+                  }
                 </p>
               </div>
             </div>
@@ -97,7 +101,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="relative h-64 overflow-hidden rounded-2xl md:h-96">
               <Image
-                src="/images/quran-study.jpg"
+                src="/images/about.jpeg"
                 alt="بيئة دراسة قرآنية"
                 fill
                 className="object-cover"
@@ -111,19 +115,16 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="mb-16 text-center">
               <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-wider text-accent">
-                {'قيمنا'}
+                {"قيمنا"}
               </span>
               <h2 className="text-balance text-3xl font-bold text-foreground md:text-4xl">
-                {'القيم التي تحركنا'}
+                {"القيم التي تحركنا"}
               </h2>
             </div>
 
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
               {values.map((value) => (
-                <div
-                  key={value.title}
-                  className="text-center"
-                >
+                <div key={value.title} className="text-center">
                   <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-primary">
                     <value.icon className="h-7 w-7 text-primary-foreground" />
                   </div>
@@ -141,5 +142,5 @@ export default function AboutPage() {
       </main>
       <Footer />
     </>
-  )
+  );
 }

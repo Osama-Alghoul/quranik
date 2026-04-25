@@ -1,19 +1,19 @@
-import Link from 'next/link'
+import Link from "next/link";
 
 const footerLinks = {
   navigation: [
-    { href: '/', label: 'الرئيسية' },
-    { href: '/about', label: 'من نحن' },
-    { href: '/programs', label: 'البرامج' },
-    { href: '/teachers', label: 'المعلمون' },
+    { href: "/", label: "الرئيسية" },
+    { href: "/about", label: "من نحن" },
+    // { href: '/programs', label: 'البرامج' },
+    // { href: "/teachers", label: "المعلمون" },
   ],
   support: [
-    { href: '/faq', label: 'الأسئلة الشائعة' },
-    { href: '/contact', label: 'تواصل معنا' },
-    { href: '/privacy', label: 'سياسة الخصوصية' },
-    { href: '/terms', label: 'الشروط والأحكام' },
+    { href: "/faq", label: "الأسئلة الشائعة" },
+    { href: "/contact", label: "تواصل معنا" },
+    { href: "/privacy", label: "سياسة الخصوصية" },
+    { href: "/terms", label: "الشروط والأحكام" },
   ],
-}
+};
 
 export default function Footer() {
   return (
@@ -24,7 +24,9 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent">
-                <span className="text-lg font-bold text-accent-foreground">ق</span>
+                <span className="text-lg font-bold text-accent-foreground">
+                  ق
+                </span>
               </div>
               <span className="text-xl font-bold">قرآنيك</span>
             </div>
@@ -76,10 +78,10 @@ export default function Footer() {
         {/* Bottom */}
         <div className="mt-12 border-t border-primary-foreground/10 pt-8 text-center">
           <p className="text-sm text-primary-foreground/50">
-            {'جميع الحقوق محفوظة'} &copy; {new Date().getFullYear()} {'قرآنيك'}
+            {"جميع الحقوق محفوظة"} &copy; {new Date().getFullYear()} {"قرآنيك"}
           </p>
         </div>
       </div>
     </footer>
-  )
+  );
 }

@@ -50,14 +50,14 @@ export default function HeroSection() {
               <ArrowLeft className="mr-2 h-4 w-4" />
             </Link>
           </Button>
-          <Button
+          {/* <Button
             size="lg"
             variant="outline"
             className="border-primary-foreground/30 text-primary hover:bg-primary-foreground/10"
             asChild
           >
             <Link href="/programs">استعرض البرامج</Link>
-          </Button>
+          </Button> */}
         </div>
       </div>
     </section>
@@ -185,11 +185,11 @@ export function ProgramsPreviewSection() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        {/* <div className="mt-12 text-center">
           <Button variant="default" size="lg" asChild>
             <Link href="/programs">عرض جميع البرامج</Link>
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
