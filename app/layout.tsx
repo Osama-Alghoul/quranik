@@ -3,6 +3,8 @@ import { Cairo } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Toaster } from "sonner";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const cairo = Cairo({
   subsets: ["arabic", "latin"],
@@ -32,7 +34,9 @@ export default function RootLayout({
     <html lang="ar" dir="rtl" className={cairo.variable}>
       <body className="font-sans antialiased">
         <Toaster position="bottom-center" />
+        <Navbar />
         {children}
+        <Footer />
         <Analytics />
       </body>
     </html>

@@ -1,5 +1,3 @@
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import HeroSection, {
   WhyQuranikSection,
   ProgramsPreviewSection,
@@ -10,17 +8,13 @@ import HeroSection, {
 
 export default function HomePage() {
   return (
-    <>
-      <Navbar />
-      <main>
-        <HeroSection />
-        <WhyQuranikSection />
-        <ProgramsPreviewSection />
-        <HowItWorksSection />
-        <TestimonialsSection />
-        <CTASection />
-      </main>
-      <Footer />
-    </>
+    <main>
+      <HeroSection />
+      <WhyQuranikSection />
+      <ProgramsPreviewSection />
+      <HowItWorksSection />
+      <TestimonialsSection />
+      <CTASection />
+    </main>
   );
 }

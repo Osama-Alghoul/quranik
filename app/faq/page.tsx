@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import {
   Accordion,
   AccordionContent,
@@ -114,7 +112,6 @@ export default function FAQPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      <Navbar />
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden bg-primary py-20 lg:py-28">
@@ -173,7 +170,6 @@ export default function FAQPage() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

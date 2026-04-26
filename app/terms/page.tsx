@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "الشروط والأحكام",
@@ -10,153 +8,147 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <>
-      <Navbar />
-      <main className="bg-background py-20 lg:py-28">
-        <article className="mx-auto max-w-3xl px-4 lg:px-8">
-          <h1 className="mb-8 text-3xl font-bold text-foreground md:text-4xl">
-            {'شروط وأحكام مؤسسة "قرآنيك" التعليمية المجتمعية'}
-          </h1>
+    <main className="bg-background py-20 lg:py-28">
+      <article className="mx-auto max-w-3xl px-4 lg:px-8">
+        <h1 className="mb-8 text-3xl font-bold text-foreground md:text-4xl">
+          {'شروط وأحكام مؤسسة "قرآنيك" التعليمية المجتمعية'}
+        </h1>
 
-          <div className="space-y-8 text-base leading-relaxed text-muted-foreground">
-            <section className="rounded-2xl bg-primary/5 p-6 border border-primary/10">
-              <h2 className="mb-3 text-xl font-bold text-foreground">
-                {"مقدمة"}
-              </h2>
-              <p>
-                {
-                  'مؤسسة "قرآنيك" هي مؤسسة تعليمية مجتمعية هادفة، تأسست لتردم الهوة بين أطفالنا في المهجر وبين نبع القرآن الكريم. إن نموذج عملنا ليس تجارياً بحتاً، بل هو نموذج "تمكين مستدام"، حيث نوجه عوائد اشتراكاتكم بشكل مباشر لدعم الكوادر التعليمية في قطاع غزة، وتوفير بيئة عمل كريمة تليق بحفاظ القرآن الكريم ومعلميه في ظل الظروف الصعبة.'
-                }
-              </p>
-            </section>
-
-            <section>
-              <h2 className="mb-4 text-xl font-bold text-foreground">
-                {"1. طبيعة العلاقة المجتمعية"}
-              </h2>
-              <p className="mb-4">
-                {
-                  'عند اشتراكك في "قرآنيك"، فأنت لا تشتري خدمة تعليمية فحسب، بل تساهم في إحداث أثر اجتماعي ملموس. اشتراكك يمثل استثماراً في:'
-                }
-              </p>
-              <ul className="list-inside list-disc space-y-3 pr-4">
-                <li>{"تمكين معلمي ومعلمات القرآن في غزة مادياً ومهنياً."}</li>
-                <li>
-                  {
-                    "ضمان استمرارية العملية التعليمية في فلسطين رغم كل التحديات."
-                  }
-                </li>
-                <li>
-                  {"بناء جسر معرفي وقيمي بين أطفالنا في الخارج وأهلنا في غزة."}
-                </li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="mb-3 text-xl font-bold text-foreground">
-                {"2. الرسوم والالتزام المالي"}
-              </h2>
-              <ul className="list-inside list-disc space-y-3 pr-4">
-                <li>
-                  {
-                    'تعد رسوم الاشتراك المورد الرئيسي الذي نعتمد عليه في "قرآنيك" لضمان استدامة عمل المعلمين. لذا، نلتزم بالشفافية الكاملة في صرف هذه العوائد لدعم الكادر التعليمي.'
-                  }
-                </li>
-                <li>
-                  {
-                    "تتم عمليات الدفع بشكل دوري ومسبق لضمان استمرارية جدولة الحصص وتأمين حقوق المعلمين بشكل شهري."
-                  }
-                </li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="mb-3 text-xl font-bold text-foreground">
-                {
-                  "3. التزامات الأكاديمية (ميثاق المرونة في ظل الظروف الاستثنائية)"
-                }
-              </h2>
-              <p className="mb-4">
-                {
-                  "نحن نعمل من قلب غزة، وهو ما يتطلب منا ومنكم تفهماً متبادلاً للظروف القاهرة:"
-                }
-              </p>
-              <div className="rounded-xl border border-amber-200 bg-amber-50 p-5 text-amber-900">
-                <h3 className="mb-2 font-bold">{"التعويض لا الاسترداد:"}</h3>
-                <p>
-                  {
-                    "في حال انقطاع التيار الكهربائي أو الإنترنت أو أي ظروف قهرية خارجة عن إرادة المعلم، لا نلجأ فوراً لاسترداد المبالغ، بل تلتزم الأكاديمية بالتعويض الكامل لجميع الحصص الفائتة في أقرب وقت متاح."
-                  }
-                </p>
-                <p className="mt-3 text-sm italic">
-                  {
-                    "هذا المبدأ هو جزء من عقدنا الاجتماعي معكم، حيث نضمن حق الطالب في التعليم، وحق المعلم في تلقي أجره مقابل جهده، حتى لو تأخر موعد التنفيذ."
-                  }
-                </p>
-              </div>
-            </section>
-
-            <section>
-              <h2 className="mb-3 text-xl font-bold text-foreground">
-                {"4. إلغاء الاشتراك"}
-              </h2>
-              <ul className="list-inside list-disc space-y-3 pr-4">
-                <li>
-                  {
-                    "إذا رغب الطالب في إيقاف الاشتراك، نرجو إبلاغنا قبل (7) أيام عمل من بداية الدورة التعليمية الجديدة."
-                  }
-                </li>
-                <li>
-                  {
-                    "نحن نؤمن بالمرونة؛ لذا في حال وجود ظروف طارئة خاصة بالطالب، يمكننا تجميد الاشتراك مؤقتاً بدلاً من إلغائه، لضمان استمرار دعم المعلم المخصص له."
-                  }
-                </li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="mb-3 text-xl font-bold text-foreground">
-                {"5. خصوصية وحماية البيانات"}
-              </h2>
-              <p>
-                {
-                  "بصفتنا مؤسسة تعليمية مجتمعية، نعتبر بيانات طلابنا أمانة. لا يتم تسجيل الحصص أو مشاركة أي بيانات شخصية إلا لأغراض تقييم الأداء التعليمي، وبموافقة صريحة من ولي الأمر."
-                }
-              </p>
-            </section>
-
-            <section>
-              <h2 className="mb-3 text-xl font-bold text-foreground">
-                {"6. سلوكيات البيئة التعليمية"}
-              </h2>
-              <p>
-                {
-                  "نحافظ على بيئة تعليمية وقورة تحترم خصوصية المعلم في غزة وظروفه الصعبة، ونطلب من أولياء الأمور غرس قيم الاحترام المتبادل في نفوس أبنائهم تجاه معلميهم."
-                }
-              </p>
-            </section>
-
-            <section className="pt-8 border-t border-border">
-              <h2 className="mb-3 text-xl font-bold text-foreground">
-                {"التواصل"}
-              </h2>
-              <p>
-                {
-                  "لأي استفسارات حول الشروط والأحكام، يرجى التواصل معنا عبر البريد الإلكتروني:"
-                }{" "}
-                <span className="font-medium text-foreground" dir="ltr">
-                  info@quranik.org
-                </span>
-              </p>
-            </section>
-
-            <p className="text-sm text-muted-foreground/70">
-              {"آخر تحديث: أبريل 2026"}
+        <div className="space-y-8 text-base leading-relaxed text-muted-foreground">
+          <section className="rounded-2xl bg-primary/5 p-6 border border-primary/10">
+            <h2 className="mb-3 text-xl font-bold text-foreground">
+              {"مقدمة"}
+            </h2>
+            <p>
+              {
+                'مؤسسة "قرآنيك" هي مؤسسة تعليمية مجتمعية هادفة، تأسست لتردم الهوة بين أطفالنا في المهجر وبين نبع القرآن الكريم. إن نموذج عملنا ليس تجارياً بحتاً، بل هو نموذج "تمكين مستدام"، حيث نوجه عوائد اشتراكاتكم بشكل مباشر لدعم الكوادر التعليمية في قطاع غزة، وتوفير بيئة عمل كريمة تليق بحفاظ القرآن الكريم ومعلميه في ظل الظروف الصعبة.'
+              }
             </p>
-          </div>
-        </article>
-      </main>
-      <Footer />
-    </>
+          </section>
+
+          <section>
+            <h2 className="mb-4 text-xl font-bold text-foreground">
+              {"1. طبيعة العلاقة المجتمعية"}
+            </h2>
+            <p className="mb-4">
+              {
+                'عند اشتراكك في "قرآنيك"، فأنت لا تشتري خدمة تعليمية فحسب، بل تساهم في إحداث أثر اجتماعي ملموس. اشتراكك يمثل استثماراً في:'
+              }
+            </p>
+            <ul className="list-inside list-disc space-y-3 pr-4">
+              <li>{"تمكين معلمي ومعلمات القرآن في غزة مادياً ومهنياً."}</li>
+              <li>
+                {"ضمان استمرارية العملية التعليمية في فلسطين رغم كل التحديات."}
+              </li>
+              <li>
+                {"بناء جسر معرفي وقيمي بين أطفالنا في الخارج وأهلنا في غزة."}
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="mb-3 text-xl font-bold text-foreground">
+              {"2. الرسوم والالتزام المالي"}
+            </h2>
+            <ul className="list-inside list-disc space-y-3 pr-4">
+              <li>
+                {
+                  'تعد رسوم الاشتراك المورد الرئيسي الذي نعتمد عليه في "قرآنيك" لضمان استدامة عمل المعلمين. لذا، نلتزم بالشفافية الكاملة في صرف هذه العوائد لدعم الكادر التعليمي.'
+                }
+              </li>
+              <li>
+                {
+                  "تتم عمليات الدفع بشكل دوري ومسبق لضمان استمرارية جدولة الحصص وتأمين حقوق المعلمين بشكل شهري."
+                }
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="mb-3 text-xl font-bold text-foreground">
+              {
+                "3. التزامات الأكاديمية (ميثاق المرونة في ظل الظروف الاستثنائية)"
+              }
+            </h2>
+            <p className="mb-4">
+              {
+                "نحن نعمل من قلب غزة، وهو ما يتطلب منا ومنكم تفهماً متبادلاً للظروف القاهرة:"
+              }
+            </p>
+            <div className="rounded-xl border border-amber-200 bg-amber-50 p-5 text-amber-900">
+              <h3 className="mb-2 font-bold">{"التعويض لا الاسترداد:"}</h3>
+              <p>
+                {
+                  "في حال انقطاع التيار الكهربائي أو الإنترنت أو أي ظروف قهرية خارجة عن إرادة المعلم، لا نلجأ فوراً لاسترداد المبالغ، بل تلتزم الأكاديمية بالتعويض الكامل لجميع الحصص الفائتة في أقرب وقت متاح."
+                }
+              </p>
+              <p className="mt-3 text-sm italic">
+                {
+                  "هذا المبدأ هو جزء من عقدنا الاجتماعي معكم، حيث نضمن حق الطالب في التعليم، وحق المعلم في تلقي أجره مقابل جهده، حتى لو تأخر موعد التنفيذ."
+                }
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="mb-3 text-xl font-bold text-foreground">
+              {"4. إلغاء الاشتراك"}
+            </h2>
+            <ul className="list-inside list-disc space-y-3 pr-4">
+              <li>
+                {
+                  "إذا رغب الطالب في إيقاف الاشتراك، نرجو إبلاغنا قبل (7) أيام عمل من بداية الدورة التعليمية الجديدة."
+                }
+              </li>
+              <li>
+                {
+                  "نحن نؤمن بالمرونة؛ لذا في حال وجود ظروف طارئة خاصة بالطالب، يمكننا تجميد الاشتراك مؤقتاً بدلاً من إلغائه، لضمان استمرار دعم المعلم المخصص له."
+                }
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="mb-3 text-xl font-bold text-foreground">
+              {"5. خصوصية وحماية البيانات"}
+            </h2>
+            <p>
+              {
+                "بصفتنا مؤسسة تعليمية مجتمعية، نعتبر بيانات طلابنا أمانة. لا يتم تسجيل الحصص أو مشاركة أي بيانات شخصية إلا لأغراض تقييم الأداء التعليمي، وبموافقة صريحة من ولي الأمر."
+              }
+            </p>
+          </section>
+
+          <section>
+            <h2 className="mb-3 text-xl font-bold text-foreground">
+              {"6. سلوكيات البيئة التعليمية"}
+            </h2>
+            <p>
+              {
+                "نحافظ على بيئة تعليمية وقورة تحترم خصوصية المعلم في غزة وظروفه الصعبة، ونطلب من أولياء الأمور غرس قيم الاحترام المتبادل في نفوس أبنائهم تجاه معلميهم."
+              }
+            </p>
+          </section>
+
+          <section className="pt-8 border-t border-border">
+            <h2 className="mb-3 text-xl font-bold text-foreground">
+              {"التواصل"}
+            </h2>
+            <p>
+              {
+                "لأي استفسارات حول الشروط والأحكام، يرجى التواصل معنا عبر البريد الإلكتروني:"
+              }{" "}
+              <span className="font-medium text-foreground" dir="ltr">
+                info@quranik.org
+              </span>
+            </p>
+          </section>
+
+          <p className="text-sm text-muted-foreground/70">
+            {"آخر تحديث: أبريل 2026"}
+          </p>
+        </div>
+      </article>
+    </main>
   );
 }
