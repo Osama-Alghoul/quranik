@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { info } from "@/assets/info";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -58,30 +59,42 @@ export default function ContactPage() {
                   }
                 </p>
 
-                <div className="space-y-6">
-                  {/* <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                      <Mail className="h-5 w-5 text-primary" />
+                <div className="space-y-3">
+                  <a
+                    href={`mailto:${info.email}`}
+                    target="_blank"
+                    className="flex w-fit items-start gap-4 rounded-xl p-2 hover:bg-secondary/50 transition-colors group"
+                  >
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                      <Mail className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
                     </div>
                     <div>
-                      <p className="font-bold text-foreground">{'البريد الإلكتروني'}</p>
-                      <p className="text-sm text-muted-foreground" dir="ltr">info@quranik.org</p>
+                      <p className="font-bold text-foreground">
+                        {"البريد الإلكتروني"}
+                      </p>
+                      <p className="text-sm text-muted-foreground" dir="ltr">
+                        {info.email}
+                      </p>
                     </div>
-                  </div> */}
+                  </a>
 
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                      <Phone className="h-5 w-5 text-primary" />
+                  <a
+                    href={`https://wa.me/${info.phone}`}
+                    target="_blank"
+                    className="flex w-fit items-start gap-4 hover:bg-secondary/50 p-2 rounded-xl group transition-colors"
+                  >
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                      <Phone className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
                     </div>
                     <div>
                       <p className="font-bold text-foreground">{"واتساب"}</p>
                       <p className="text-sm text-muted-foreground" dir="ltr">
-                        +970 567 439 584
+                        {info.phone}
                       </p>
                     </div>
-                  </div>
+                  </a>
 
-                  <div className="flex items-start gap-4">
+                  <div className="flex items-start gap-4 p-2">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">
                       <Clock className="h-5 w-5 text-primary" />
                     </div>
