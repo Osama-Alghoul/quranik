@@ -1,65 +1,119 @@
-import type { Metadata } from 'next'
-import Image from 'next/image'
-import Navbar from '@/components/navbar'
-import Footer from '@/components/footer'
+import type { Metadata } from "next";
+import Image from "next/image";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion'
+} from "@/components/ui/accordion";
 
 export const metadata: Metadata = {
-  title: 'الأسئلة الشائعة',
-  description: 'إجابات على الأسئلة الأكثر شيوعًا حول برامج قرآنيك والاشتراك والدروس.',
-}
+  title: "الأسئلة الشائعة",
+  description:
+    "إجابات على الأسئلة الأكثر شيوعًا حول برامج قرآنيك والاشتراك والدروس.",
+};
 
-const faqs = [
+const faqCategories = [
   {
-    question: 'كيف تتم الدروس؟',
-    answer:
-      'الدروس تتم عبر لقاءات مباشرة أونلاين مع المعلم باستخدام تطبيقات مؤتمرات الفيديو، مع متابعة وتقارير مفصلة بعد كل جلسة.',
+    title: "الأسئلة التشغيلية",
+    description: "كل ما يهم ولي الأمر والمؤثرين حول المعلمين والخدمة.",
+    items: [
+      {
+        question: 'من هم المعلمون في "قرآنيك"؟',
+        answer:
+          "نخبة من الحفاظ والمجازين من قطاع غزة، تم اختيارهم بناءً على كفاءتهم في التجويد، وأساليبهم التربوية الحديثة في التعامل مع الأطفال.",
+      },
+      {
+        question: "هل الخدمة مدفوعة؟ ولماذا؟",
+        answer:
+          "نعم، هي خدمة مدفوعة برسوم اشتراك مدروسة. الهدف هو ضمان استدامة المشروع وتوفير دخل كريم ومستدام لمعلمينا في غزة، بما يحفظ كرامتهم ويدعم صمودهم.",
+      },
+      {
+        question: "ما هي الفئات العمرية المستهدفة؟",
+        answer:
+          "نستهدف الأطفال والناشئة في دول المهجر، مع وجود برامج مخصصة للبالغين الراغبين في تصحيح التلاوة أو نيل الإجازة.",
+      },
+    ],
   },
   {
-    question: 'هل يمكن اختيار المعلم؟',
-    answer:
-      'نعم، يمكنك استعراض جميع المعلمين المتاحين والاطلاع على ملفاتهم الشخصية واختيار المعلم المناسب قبل الاشتراك.',
+    title: "الأسئلة التقنية",
+    description: "معلومات حول كيفية تقديم الدروس والمتطلبات التقنية.",
+    items: [
+      {
+        question: "كيف يتم تقديم الدروس؟",
+        answer:
+          "عبر منصة تفاعلية (أونلاين) تتيح التواصل المباشر (صوت وصورة) بين المعلم والطالب، مع أدوات لمتابعة الحفظ والتقييم الدوري.",
+      },
+      {
+        question: "هل أحتاج لسرعة إنترنت عالية؟",
+        answer:
+          "تم تحسين المنصة لتعمل بأقل استهلاك للبيانات وبجودة عالية، لتتجاوز تحديات الاتصال وتضمن استمرارية الحصة دون انقطاع.",
+      },
+    ],
   },
   {
-    question: 'هل الاشتراك شهري؟',
-    answer:
-      'الاشتراك يكون مرة واحدة لكل دورة. لا توجد رسوم شهرية مخفية أو التزامات إضافية.',
+    title: "الأسئلة القانونية والخصوصية",
+    description: "التزاماتنا تجاه حماية بياناتكم وحقوقكم القانونية.",
+    items: [
+      {
+        question: "ما هي سياسة الخصوصية وحماية بيانات أطفالي؟",
+        answer:
+          "نلتزم بأعلى معايير حماية البيانات العالمية. جميع المعلومات الشخصية مشفرة، ولا يتم تسجيل الحصص إلا بموافقة كتابية من ولي الأمر ولأغراض الجودة فقط.",
+      },
+      {
+        question: "هل يمكنني إلغاء الاشتراك واسترداد الأموال؟",
+        answer:
+          'نعم، توضح اتفاقية "شروط الخدمة" حقوقك في الإلغاء والاسترداد ضمن مدد زمنية محددة، لضمان العدالة للطرفين (المشترك والمعلم).',
+      },
+      //   {
+      //     question: 'ما هي المرجعية القانونية للمنصة؟',
+      //     answer:
+      //       '"قرآنيك" مسجلة ككيان رسمي يعمل وفق القوانين المنظمة للتعليم عن بُعد، وتخضع اتفاقية الاستخدام للأطر القانونية التي تحمي حقوق المستهلك والمعلم على حد سواء.',
+      //   },
+    ],
   },
   {
-    question: 'ما هي المنصات المستخدمة للدروس؟',
-    answer:
-      'نستخدم أحدث منصات التواصل المرئي مثل Zoom وGoogle Meet لضمان جودة عالية في الصوت والصورة.',
+    title: "الأثر والمصداقية",
+    description: "شفافية العمل ووصول الدعم لمستحقيه في غزة.",
+    items: [
+      {
+        question: "كيف أتأكد أن مساهمتي تصل للمعلم في غزة فعلاً؟",
+        answer:
+          "المنصة تعتمد نظاماً مالياً شفافاً. يتم تحويل المستحقات للمعلمين بشكل دوري، ونحن مؤسسة قائمة على تمكين الكادر البشري في غزة وليس مجرد وسيط.",
+      },
+      {
+        question: "هل توفرون تجربة مجانية؟",
+        answer:
+          "نعم، نوفر حصة تقييمية أولى مجانية ليتعرف الطالب على المعلم والمنهج قبل الالتزام بأي اشتراك مالي.",
+      },
+    ],
   },
-  {
-    question: 'هل يمكنني تغيير موعد الدرس؟',
-    answer:
-      'نعم، نوفر مرونة كاملة في تحديد المواعيد. يمكنك تغيير موعد الدرس بالتنسيق مع المعلم مسبقًا.',
-  },
-  {
-    question: 'هل البرامج مناسبة لغير الناطقين بالعربية؟',
-    answer:
-      'نعم، لدينا معلمون متخصصون في تدريس غير الناطقين بالعربية بأساليب تعليمية مصممة خصيصًا لهم.',
-  },
-  {
-    question: 'كيف أتابع تقدم ابني/ابنتي؟',
-    answer:
-      'نوفر تقارير مفصلة بعد كل لقاء تُرسل مباشرة للوالدين، تشمل ما تم تعلمه ونقاط القوة والتحسين والتوصيات.',
-  },
-  {
-    question: 'هل يوجد ضمان استرداد؟',
-    answer:
-      'نعم، نوفر فترة تجريبية. إذا لم تكن راضيًا عن الخدمة خلال الأسبوع الأول، يمكنك استرداد المبلغ كاملًا.',
-  },
-]
+];
 
 export default function FAQPage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqCategories.flatMap((category) =>
+      category.items.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    ),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <Navbar />
       <main>
         {/* Hero */}
@@ -75,33 +129,51 @@ export default function FAQPage() {
           </div>
           <div className="relative mx-auto max-w-4xl px-4 text-center lg:px-8">
             <h1 className="text-3xl font-bold text-primary-foreground md:text-5xl">
-              {'الأسئلة الشائعة'}
+              {"الأسئلة الشائعة"}
             </h1>
             <p className="mt-4 text-lg leading-relaxed text-primary-foreground/80">
-              {'إجابات على أكثر الأسئلة شيوعًا حول خدماتنا وبرامجنا'}
+              {"إجابات على أكثر الأسئلة شيوعًا حول خدماتنا وبرامجنا"}
             </p>
           </div>
         </section>
 
-        {/* FAQ */}
+        {/* FAQ Categories */}
         <section className="bg-background py-20 lg:py-28">
-          <div className="mx-auto max-w-3xl px-4 lg:px-8">
-            <Accordion type="single" collapsible className="w-full">
-              {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="border-border">
-                  <AccordionTrigger className="text-right text-base font-bold text-foreground hover:no-underline">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-base leading-relaxed text-muted-foreground">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
+          <div className="mx-auto max-w-4xl px-4 lg:px-8">
+            <div className="space-y-16">
+              {faqCategories.map((category, catIndex) => (
+                <div key={catIndex} className="space-y-6">
+                  <div className="border-r-4 border-primary pr-4">
+                    <h2 className="text-2xl font-bold text-foreground">
+                      {category.title}
+                    </h2>
+                    <p className="mt-1 text-muted-foreground">
+                      {category.description}
+                    </p>
+                  </div>
+                  <Accordion type="single" collapsible className="w-full">
+                    {category.items.map((faq, index) => (
+                      <AccordionItem
+                        key={index}
+                        value={`item-${catIndex}-${index}`}
+                        className="border-border"
+                      >
+                        <AccordionTrigger className="text-right text-base font-bold text-foreground hover:no-underline">
+                          {faq.question}
+                        </AccordionTrigger>
+                        <AccordionContent className="text-base leading-relaxed text-muted-foreground">
+                          {faq.answer}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </div>
               ))}
-            </Accordion>
+            </div>
           </div>
         </section>
       </main>
       <Footer />
     </>
-  )
+  );
 }

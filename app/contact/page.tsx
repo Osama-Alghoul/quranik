@@ -65,7 +65,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="font-bold text-foreground">{'البريد الإلكتروني'}</p>
-                      <p className="text-sm text-muted-foreground" dir="ltr">info@quranik.com</p>
+                      <p className="text-sm text-muted-foreground" dir="ltr">info@quranik.org</p>
                     </div>
                   </div> */}
 
@@ -76,7 +76,7 @@ export default function ContactPage() {
                     <div>
                       <p className="font-bold text-foreground">{"واتساب"}</p>
                       <p className="text-sm text-muted-foreground" dir="ltr">
-                        +970 592 532 338
+                        +970 567 439 584
                       </p>
                     </div>
                   </div>
