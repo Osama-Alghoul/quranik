@@ -4,7 +4,10 @@ import { toast } from "sonner";
 
 declare global {
   interface Window {
-    Tawk_API?: any;
+    Tawk_API?: {
+      maximize?: () => void;
+      onLoad?: () => void;
+    };
     Tawk_LoadStart?: Date;
   }
 }

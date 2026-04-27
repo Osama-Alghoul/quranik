@@ -2,14 +2,13 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Mail, Phone, Clock, Send, CheckCircle } from "lucide-react";
+import { Mail, Phone, Clock, CheckCircle, Loader2, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { info } from "@/assets/info";
 import { toast } from "sonner";
-import { Loader2 } from "lucide-react";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -45,8 +44,12 @@ export default function ContactPage() {
 
       setSubmitted(true);
       toast.success("تم إرسال رسالتك بنجاح");
-    } catch (error: any) {
-      toast.error(error.message || "حدث خطأ ما، يرجى المحاولة لاحقاً");
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        toast.error(error.message || "حدث خطأ ما، يرجى المحاولة لاحقاً");
+      } else {
+        toast.error("حدث خطأ ما، يرجى المحاولة لاحقاً");
+      }
     } finally {
       setLoading(false);
     }
@@ -94,6 +97,7 @@ export default function ContactPage() {
                 <a
                   href={`mailto:${info.email}`}
                   target="_blank"
+                  rel="noreferrer"
                   className="flex w-fit items-start gap-4 rounded-xl p-2 hover:bg-secondary/50 transition-colors group"
                 >
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
@@ -112,6 +116,7 @@ export default function ContactPage() {
                 <a
                   href={`https://wa.me/${info.phone}`}
                   target="_blank"
+                  rel="noreferrer"
                   className="flex w-fit items-start gap-4 hover:bg-secondary/50 p-2 rounded-xl group transition-colors"
                 >
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
@@ -230,13 +235,12 @@ export default function ContactPage() {
                     className="w-full"
                     disabled={true}
                   >
-                    {/* {loading ? (
+                    {loading ? (
                       <Loader2 className="ml-2 h-4 w-4 animate-spin" />
                     ) : (
                       <Send className="ml-2 h-4 w-4" />
                     )}
-                    {loading ? "جاري الإرسال..." : "إرسال الرسالة"} */}
-                    جاري العمل قريباً
+                    {loading ? "جاري الإرسال..." : "جاري العمل قريباً"}
                   </Button>
                 </form>
               )}
