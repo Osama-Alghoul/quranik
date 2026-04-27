@@ -2,11 +2,23 @@ import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 
+import { verifyTurnstileToken } from '@/lib/turnstile';
+
 const resend = new Resend(process.env.RESEND_API);
 
 export async function POST(req: Request) {
   try {
-    const { name, email, phone, subject, message } = await req.json();
+    const { name, email, phone, subject, message, turnstileToken } = await req.json();
+
+    // Verify Turnstile Token
+    if (!turnstileToken) {
+      return NextResponse.json({ error: 'Missing security token.' }, { status: 400 });
+    }
+
+    const isVerified = await verifyTurnstileToken(turnstileToken);
+    if (!isVerified) {
+      return NextResponse.json({ error: 'Security verification failed. Please try again.' }, { status: 400 });
+    }
 
     // Rate limiting check
     const cookieStore = await cookies();

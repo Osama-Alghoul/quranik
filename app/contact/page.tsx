@@ -9,10 +9,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { info } from "@/assets/info";
 import { toast } from "sonner";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -25,7 +27,14 @@ export default function ContactPage() {
       phone: formData.get("phone"),
       subject: formData.get("subject"),
       message: formData.get("message"),
+      turnstileToken,
     };
+
+    if (!turnstileToken) {
+      toast.error("يرجى إكمال التحقق الأمني");
+      setLoading(false);
+      return;
+    }
 
     try {
       const response = await fetch("/api/contact", {
@@ -229,18 +238,27 @@ export default function ContactPage() {
                     />
                   </div>
 
+                  <div className="flex justify-center">
+                    <Turnstile
+                      siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                      onSuccess={(token) => setTurnstileToken(token)}
+                      onExpire={() => setTurnstileToken(null)}
+                      onError={() => setTurnstileToken(null)}
+                    />
+                  </div>
+
                   <Button
                     type="submit"
                     size="lg"
                     className="w-full"
-                    disabled={true}
+                    disabled={loading || !turnstileToken}
                   >
                     {loading ? (
                       <Loader2 className="ml-2 h-4 w-4 animate-spin" />
                     ) : (
                       <Send className="ml-2 h-4 w-4" />
                     )}
-                    {loading ? "جاري الإرسال..." : "جاري العمل قريباً"}
+                    {loading ? "جاري الإرسال..." : "إرسال الرسالة"}
                   </Button>
                 </form>
               )}
