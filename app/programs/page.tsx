@@ -52,80 +52,81 @@ export default function ProgramsPage() {
                 className="group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:border-accent/30 hover:shadow-lg"
               >
                 <div className="p-8 lg:p-10">
-                  <div className="flex items-start gap-5">
-                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                      <program.icon className="h-7 w-7 text-primary" />
+                  <div className="flex-1">
+                    <Link
+                      href={`/programs/${program.slug}`}
+                      className="mb-4 flex items-center gap-3"
+                    >
+                      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                        <program.icon className="h-7 w-7 text-primary" />
+                      </div>
+                      <h2 className="mb-3 text-2xl font-bold text-card-foreground hover:text-primary transition-colors">
+                        {program.title}
+                      </h2>
+                    </Link>
+                    <p className="mb-6 text-base leading-relaxed text-muted-foreground">
+                      {program.description}
+                    </p>
+
+                    <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                      <div className="flex items-center gap-2">
+                        <UserCheck className="h-4 w-4 text-accent" />
+                        <div>
+                          <p className="text-xs text-muted-foreground">
+                            {"الفئة المستهدفة"}
+                          </p>
+                          <p className="text-sm font-medium text-card-foreground">
+                            {program.audience}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Calendar className="h-4 w-4 text-accent" />
+                        <div>
+                          <p className="text-xs text-muted-foreground">
+                            {"عدد الحصص"}
+                          </p>
+                          <p className="text-sm font-medium text-card-foreground">
+                            {program.sessions}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Clock className="h-4 w-4 text-accent" />
+                        <div>
+                          <p className="text-xs text-muted-foreground">
+                            {"مدة الحصة"}
+                          </p>
+                          <p className="text-sm font-medium text-card-foreground">
+                            {program.duration}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <DollarSign className="h-4 w-4 text-accent" />
+                        <div>
+                          <p className="text-xs text-muted-foreground">
+                            {"السعر"}
+                          </p>
+                          <p className="text-sm font-bold text-primary">
+                            {program.price}
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex-1">
-                      <Link href={`/programs/${program.slug}`}>
-                        <h2 className="mb-3 text-2xl font-bold text-card-foreground hover:text-primary transition-colors">
-                          {program.title}
-                        </h2>
-                      </Link>
-                      <p className="mb-6 text-base leading-relaxed text-muted-foreground">
-                        {program.description}
-                      </p>
 
-                      <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                        <div className="flex items-center gap-2">
-                          <UserCheck className="h-4 w-4 text-accent" />
-                          <div>
-                            <p className="text-xs text-muted-foreground">
-                              {"الفئة المستهدفة"}
-                            </p>
-                            <p className="text-sm font-medium text-card-foreground">
-                              {program.audience}
-                            </p>
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Calendar className="h-4 w-4 text-accent" />
-                          <div>
-                            <p className="text-xs text-muted-foreground">
-                              {"عدد الحصص"}
-                            </p>
-                            <p className="text-sm font-medium text-card-foreground">
-                              {program.sessions}
-                            </p>
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Clock className="h-4 w-4 text-accent" />
-                          <div>
-                            <p className="text-xs text-muted-foreground">
-                              {"مدة الحصة"}
-                            </p>
-                            <p className="text-sm font-medium text-card-foreground">
-                              {program.duration}
-                            </p>
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <DollarSign className="h-4 w-4 text-accent" />
-                          <div>
-                            <p className="text-xs text-muted-foreground">
-                              {"السعر"}
-                            </p>
-                            <p className="text-sm font-bold text-primary">
-                              {program.price}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="flex flex-wrap gap-4">
-                        <Button asChild>
-                          <Link href={`/contact?program=${program.slug}`}>
-                            {"اشترك الآن"}
-                            <ArrowLeft className="mr-2 h-4 w-4" />
-                          </Link>
-                        </Button>
-                        <Button variant="outline" asChild>
-                          <Link href={`/programs/${program.slug}`}>
-                            {"تفاصيل البرنامج"}
-                          </Link>
-                        </Button>
-                      </div>
+                    <div className="flex flex-wrap gap-4">
+                      <Button asChild>
+                        <Link href={`/contact?program=${program.slug}`}>
+                          {"اشترك الآن"}
+                          <ArrowLeft className="mr-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                      <Button variant="outline" asChild>
+                        <Link href={`/programs/${program.slug}`}>
+                          {"تفاصيل البرنامج"}
+                        </Link>
+                      </Button>
                     </div>
                   </div>
                 </div>
