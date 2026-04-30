@@ -2,9 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   BookOpen,
-  Headphones,
   GraduationCap,
-  Users,
   ClipboardCheck,
   Calendar,
   ArrowLeft,

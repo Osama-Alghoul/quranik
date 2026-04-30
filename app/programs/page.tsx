@@ -2,14 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  BookOpen,
-  Headphones,
-  GraduationCap,
-  Users,
-  BookMarked,
   Clock,
   UserCheck,
-  ClipboardCheck,
   ArrowLeft,
   Calendar,
   DollarSign,
@@ -23,7 +17,6 @@ export const metadata: Metadata = {
 };
 
 import { programs } from "@/assets/programs";
-
 
 export default function ProgramsPage() {
   return (
@@ -113,7 +106,7 @@ export default function ProgramsPage() {
                             <p className="text-xs text-muted-foreground">
                               {"السعر"}
                             </p>
-                            <p className="text-sm font-medium text-card-foreground font-bold text-primary">
+                            <p className="text-sm font-bold text-primary">
                               {program.price}
                             </p>
                           </div>

@@ -6,7 +6,6 @@ import {
   ArrowLeft,
   Calendar,
   Clock,
-  DollarSign,
   UserCheck,
   CheckCircle2,
 } from "lucide-react";
