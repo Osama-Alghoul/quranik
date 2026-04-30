@@ -10,6 +10,7 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { programs } from "@/assets/programs";
 
 export default function HeroSection() {
   return (
@@ -50,14 +51,14 @@ export default function HeroSection() {
               <ArrowLeft className="mr-2 h-4 w-4" />
             </Link>
           </Button>
-          {/* <Button
+          <Button
             size="lg"
             variant="outline"
-            className="border-primary-foreground/30 text-primary hover:bg-primary-foreground/10"
+            className="border-primary-foreground/30 text-primary hover:bg-primary-foreground/80"
             asChild
           >
             <Link href="/programs">استعرض البرامج</Link>
-          </Button> */}
+          </Button>
         </div>
       </div>
     </section>
@@ -124,34 +125,6 @@ export function WhyQuranikSection() {
 }
 
 export function ProgramsPreviewSection() {
-  const programs = [
-    {
-      icon: BookOpen,
-      title: "حفظ القرآن",
-      description: "خطة تدريجية تناسب مستوى الطالب مع متابعة مستمرة.",
-    },
-    {
-      icon: Headphones,
-      title: "تصحيح التلاوة",
-      description: "تصحيح النطق والأداء مع معلمين متخصصين.",
-    },
-    {
-      icon: GraduationCap,
-      title: "التجويد",
-      description: "إتقان أحكام التجويد نظريًا وتطبيقيًا.",
-    },
-    {
-      icon: BookOpen,
-      title: "الحديث والفقه",
-      description: "تعلم أساسيات الحديث النبوي والفقه الإسلامي.",
-    },
-    {
-      icon: Users,
-      title: "برامج الأطفال",
-      description: "برامج تعليمية ممتعة مصممة خصيصًا للأطفال.",
-    },
-  ];
-
   return (
     <section className="bg-secondary py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -166,22 +139,28 @@ export function ProgramsPreviewSection() {
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {programs.map((program) => (
-            <div
+            <Link
               key={program.title}
+              href={`/programs/${program.slug}`}
               className="group flex items-start gap-4 rounded-xl border border-border bg-card p-6 transition-all hover:border-accent/30 hover:shadow-md"
             >
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-accent/10">
                 <program.icon className="h-6 w-6 text-accent" />
               </div>
-              <div>
-                <h3 className="mb-1 text-lg font-bold text-card-foreground">
-                  {program.title}
-                </h3>
+              <div className="flex-1">
+                <div className="flex items-center justify-between">
+                  <h3 className="mb-1 text-lg font-bold text-card-foreground group-hover:text-primary transition-colors">
+                    {program.title}
+                  </h3>
+                  <span className="text-sm font-bold text-primary">
+                    {program.price}
+                  </span>
+                </div>
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   {program.description}
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

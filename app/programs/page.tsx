@@ -11,6 +11,8 @@ import {
   UserCheck,
   ClipboardCheck,
   ArrowLeft,
+  Calendar,
+  DollarSign,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -20,53 +22,8 @@ export const metadata: Metadata = {
     "استعرض برامج قرآنيك المتنوعة: حفظ القرآن، تصحيح التلاوة، التجويد، الحديث والفقه، وبرامج الأطفال.",
 };
 
-const programs = [
-  {
-    icon: BookOpen,
-    title: "حفظ القرآن",
-    description:
-      "برنامج حفظ القرآن مصمم بخطة تدريجية تناسب مستوى الطالب، مع متابعة مستمرة وتقارير بعد كل لقاء. يشمل البرنامج مراجعة دورية وتثبيتًا للحفظ السابق.",
-    audience: "الأطفال والشباب والبالغين",
-    duration: "6 أشهر - سنتين",
-    tracking: "تقرير مفصل بعد كل لقاء",
-  },
-  {
-    icon: Headphones,
-    title: "تصحيح التلاوة",
-    description:
-      "برنامج متخصص في تصحيح النطق وأداء الحروف والكلمات القرآنية، مع معلمين ذوي خبرة في تدريس الناطقين بالعربية وغيرها.",
-    audience: "جميع المستويات",
-    duration: "3 - 6 أشهر",
-    tracking: "تقييم دوري ومتابعة أسبوعية",
-  },
-  {
-    icon: GraduationCap,
-    title: "التجويد",
-    description:
-      "إتقان أحكام التجويد نظريًا وتطبيقيًا من خلال دروس تفاعلية مع معلمين متخصصين، مع تمارين عملية على آيات من القرآن الكريم.",
-    audience: "المبتدئون والمتوسطون",
-    duration: "3 - 6 أشهر",
-    tracking: "اختبارات دورية وتقارير تقدم",
-  },
-  {
-    icon: BookMarked,
-    title: "الحديث والفقه",
-    description:
-      "تعلم أساسيات الحديث النبوي الشريف والفقه الإسلامي بأسلوب ميسر ومنهجي يناسب مختلف المستويات.",
-    audience: "الشباب والبالغين",
-    duration: "3 - 12 شهر",
-    tracking: "متابعة شهرية مع تقارير",
-  },
-  {
-    icon: Users,
-    title: "برامج الأطفال",
-    description:
-      "برامج تعليمية ممتعة وتفاعلية مصممة خصيصًا للأطفال، تجمع بين التعلم واللعب لبناء علاقة حب مع القرآن الكريم منذ الصغر.",
-    audience: "الأطفال من 5 إلى 12 سنة",
-    duration: "مستمر طوال العام",
-    tracking: "تقارير للوالدين بعد كل لقاء",
-  },
-];
+import { programs } from "@/assets/programs";
+
 
 export default function ProgramsPage() {
   return (
@@ -107,14 +64,16 @@ export default function ProgramsPage() {
                       <program.icon className="h-7 w-7 text-primary" />
                     </div>
                     <div className="flex-1">
-                      <h2 className="mb-3 text-2xl font-bold text-card-foreground">
-                        {program.title}
-                      </h2>
+                      <Link href={`/programs/${program.slug}`}>
+                        <h2 className="mb-3 text-2xl font-bold text-card-foreground hover:text-primary transition-colors">
+                          {program.title}
+                        </h2>
+                      </Link>
                       <p className="mb-6 text-base leading-relaxed text-muted-foreground">
                         {program.description}
                       </p>
 
-                      <div className="mb-6 grid gap-4 sm:grid-cols-3">
+                      <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                         <div className="flex items-center gap-2">
                           <UserCheck className="h-4 w-4 text-accent" />
                           <div>
@@ -127,10 +86,21 @@ export default function ProgramsPage() {
                           </div>
                         </div>
                         <div className="flex items-center gap-2">
+                          <Calendar className="h-4 w-4 text-accent" />
+                          <div>
+                            <p className="text-xs text-muted-foreground">
+                              {"عدد الحصص"}
+                            </p>
+                            <p className="text-sm font-medium text-card-foreground">
+                              {program.sessions}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-2">
                           <Clock className="h-4 w-4 text-accent" />
                           <div>
                             <p className="text-xs text-muted-foreground">
-                              {"المدة المتوقعة"}
+                              {"مدة الحصة"}
                             </p>
                             <p className="text-sm font-medium text-card-foreground">
                               {program.duration}
@@ -138,24 +108,31 @@ export default function ProgramsPage() {
                           </div>
                         </div>
                         <div className="flex items-center gap-2">
-                          <ClipboardCheck className="h-4 w-4 text-accent" />
+                          <DollarSign className="h-4 w-4 text-accent" />
                           <div>
                             <p className="text-xs text-muted-foreground">
-                              {"آلية المتابعة"}
+                              {"السعر"}
                             </p>
-                            <p className="text-sm font-medium text-card-foreground">
-                              {program.tracking}
+                            <p className="text-sm font-medium text-card-foreground font-bold text-primary">
+                              {program.price}
                             </p>
                           </div>
                         </div>
                       </div>
 
-                      <Button asChild>
-                        <Link href="/contact">
-                          {"اشترك الآن"}
-                          <ArrowLeft className="mr-2 h-4 w-4" />
-                        </Link>
-                      </Button>
+                      <div className="flex flex-wrap gap-4">
+                        <Button asChild>
+                          <Link href={`/contact?program=${program.slug}`}>
+                            {"اشترك الآن"}
+                            <ArrowLeft className="mr-2 h-4 w-4" />
+                          </Link>
+                        </Button>
+                        <Button variant="outline" asChild>
+                          <Link href={`/programs/${program.slug}`}>
+                            {"تفاصيل البرنامج"}
+                          </Link>
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </div>

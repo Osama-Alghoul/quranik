@@ -9,7 +9,7 @@ import Image from "next/image";
 const navLinks = [
   { href: "/", label: "الرئيسية" },
   { href: "/about", label: "من نحن" },
-  // { href: "/programs", label: "البرامج" },
+  { href: "/programs", label: "البرامج" },
   // { href: "/teachers", label: "المعلمون" },
   { href: "/faq", label: "الأسئلة الشائعة" },
   { href: "/contact", label: "تواصل معنا" },

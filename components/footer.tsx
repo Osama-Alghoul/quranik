@@ -4,7 +4,7 @@ const footerLinks = {
   navigation: [
     { href: "/", label: "الرئيسية" },
     { href: "/about", label: "من نحن" },
-    // { href: '/programs', label: 'البرامج' },
+    { href: "/programs", label: "البرامج" },
     // { href: "/teachers", label: "المعلمون" },
   ],
   support: [
