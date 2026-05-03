@@ -42,7 +42,7 @@ export async function POST(req: Request) {
     // unless the user has verified their domain.
     const { data, error } = await resend.emails.send({
       from: 'Quranik Contact <onboarding@resend.dev>',
-      to: ['info@quranik.org'],
+      to: ['anas0598826733@gmail.com'],
       subject: `New Contact Form: ${subject}`,
       replyTo: email,
       html: `
