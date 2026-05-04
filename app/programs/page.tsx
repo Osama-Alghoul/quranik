@@ -9,6 +9,7 @@ import {
   DollarSign,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { info } from "@/assets/info";
 
 export const metadata: Metadata = {
   title: "البرامج",
@@ -115,14 +116,26 @@ export default function ProgramsPage() {
                       </div>
                     </div>
 
-                    <div className="flex flex-wrap gap-4">
-                      <Button asChild>
-                        <Link href={`/contact?program=${program.slug}`}>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <Button asChild size="lg" className="px-8">
+                        <a
+                          href={info.whatsapp(
+                            `السلام عليكم أرغب بالتسجيل في برنامج ${program.title}`,
+                          )}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           {"اشترك الآن"}
                           <ArrowLeft className="mr-2 h-4 w-4" />
-                        </Link>
+                        </a>
                       </Button>
-                      <Button variant="outline" asChild>
+
+                      <Button
+                        variant="outline"
+                        size="lg"
+                        asChild
+                        className="border-primary/20 text-primary hover:bg-primary/20 hover:border-primary/30 hover:text-primary"
+                      >
                         <Link href={`/programs/${program.slug}`}>
                           {"تفاصيل البرنامج"}
                         </Link>

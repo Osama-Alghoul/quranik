@@ -8,9 +8,12 @@ import {
   Clock,
   UserCheck,
   CheckCircle2,
+  MessageCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { programs } from "@/assets/programs";
+import { info } from "@/assets/info";
+import { FreeBookingButton } from "@/components/FreeBookingButton";
 
 interface ProgramPageProps {
   params: Promise<{
@@ -172,12 +175,28 @@ export default async function ProgramPage({ params }: ProgramPageProps) {
                   </div>
                 </div>
 
-                <Button className="mt-8 w-full" size="lg" asChild>
-                  <Link href={`/contact?program=${program.slug}`}>
-                    اشترك الآن
-                    <ArrowLeft className="mr-2 h-4 w-4" />
-                  </Link>
-                </Button>
+                <div className="flex flex-col gap-3 mt-8">
+                  <Button
+                    variant="outline"
+                    className="w-full border-green-600/20 text-green-700 hover:bg-green-50"
+                    size="lg"
+                    asChild
+                  >
+                    <a
+                      href={info.whatsapp(
+                        `السلام عليكم أرغب بالتسجيل في برنامج ${program.title}`,
+                      )}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <MessageCircle className="ml-2 h-5 w-5" />
+                      {"تواصل عبر واتساب"}
+                    </a>
+                  </Button>
+
+                  <FreeBookingButton />
+                </div>
+
                 <p className="mt-4 text-center text-xs text-muted-foreground">
                   لا توجد رسوم خفية، ادفع فقط ثمن الحصص
                 </p>

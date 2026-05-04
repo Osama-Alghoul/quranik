@@ -9,6 +9,8 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { programs } from "@/assets/programs";
+import { FreeBookingButton } from "@/components/FreeBookingButton";
+
 
 export default function HeroSection() {
   return (
@@ -49,7 +51,9 @@ export default function HeroSection() {
               <ArrowLeft className="mr-2 h-4 w-4" />
             </Link>
           </Button>
+          <FreeBookingButton />
           <Button
+
             size="lg"
             variant="outline"
             className="border-primary-foreground/30 text-primary hover:bg-primary-foreground/80"
@@ -326,7 +330,11 @@ export function CTASection() {
               <ArrowLeft className="mr-2 h-4 w-4" />
             </Link>
           </Button>
+          <div className="mt-4">
+            <FreeBookingButton />
+          </div>
         </div>
+
       </div>
     </section>
   );
