@@ -1,10 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Cairo } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
-import "./globals.css";
 import { Toaster } from "sonner";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
+import "./globals.css";
+import { cookies } from "next/headers";
 
 const cairo = Cairo({
   subsets: ["arabic", "latin"],
@@ -28,19 +26,19 @@ export const viewport: Viewport = {
   themeColor: "#1B4332",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const c = await cookies();
+  const locale = c.get("NEXT_LOCALE")?.value || "ar";
+
   return (
-    <html lang="ar" dir="rtl" className={cairo.variable}>
+    <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"} className={cairo.variable}>
       <body className="font-sans antialiased">
         <Toaster position="bottom-center" />
-        <Navbar />
         {children}
-        <Footer />
-        <Analytics />
       </body>
     </html>
   );

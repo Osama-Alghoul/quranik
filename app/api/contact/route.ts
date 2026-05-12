@@ -4,7 +4,13 @@ import { cookies } from 'next/headers';
 
 import { verifyTurnstileToken } from '@/lib/turnstile';
 
-const resend = new Resend(process.env.RESEND_API);
+function getResend() {
+  const apiKey = process.env.RESEND_API;
+  if (!apiKey) {
+    throw new Error("Missing RESEND_API environment variable");
+  }
+  return new Resend(apiKey);
+}
 
 export async function POST(req: Request) {
   try {
@@ -40,7 +46,7 @@ export async function POST(req: Request) {
 
     // Since it's a free key, using onboarding@resend.dev as 'from' 
     // unless the user has verified their domain.
-    const { data, error } = await resend.emails.send({
+    const { data, error } = await getResend().emails.send({
       from: 'Quranik Contact <onboarding@resend.dev>',
       to: ['anas0598826733@gmail.com'],
       subject: `New Contact Form: ${subject}`,

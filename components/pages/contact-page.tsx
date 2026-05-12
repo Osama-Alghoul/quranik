@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Mail, Phone, Clock, CheckCircle, Loader2, Send } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -11,7 +12,8 @@ import { info } from "@/assets/info";
 import { toast } from "sonner";
 import { Turnstile } from "@marsidev/react-turnstile";
 
-export default function ContactPage() {
+export function ContactPage() {
+  const t = useTranslations("contact");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
@@ -31,7 +33,7 @@ export default function ContactPage() {
     };
 
     if (!turnstileToken) {
-      toast.error("يرجى إكمال التحقق الأمني");
+      toast.error(t("form.securityError"));
       setLoading(false);
       return;
     }
@@ -39,9 +41,7 @@ export default function ContactPage() {
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
 
@@ -52,13 +52,9 @@ export default function ContactPage() {
       }
 
       setSubmitted(true);
-      toast.success("تم إرسال رسالتك بنجاح");
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        toast.error(error.message || "حدث خطأ ما، يرجى المحاولة لاحقاً");
-      } else {
-        toast.error("حدث خطأ ما، يرجى المحاولة لاحقاً");
-      }
+      toast.success(t("form.successTitle"));
+    } catch {
+      toast.error(t("form.genericError"));
     } finally {
       setLoading(false);
     }
@@ -66,7 +62,6 @@ export default function ContactPage() {
 
   return (
     <main>
-      {/* Hero */}
       <section className="relative overflow-hidden bg-primary py-20 lg:py-28">
         <div className="absolute inset-0">
           <Image
@@ -79,27 +74,23 @@ export default function ContactPage() {
         </div>
         <div className="relative mx-auto max-w-4xl px-4 text-center lg:px-8">
           <h1 className="text-3xl font-bold text-primary-foreground md:text-5xl">
-            {"تواصل معنا"}
+            {t("hero.title")}
           </h1>
           <p className="mt-4 text-lg leading-relaxed text-primary-foreground/80">
-            {"نسعد بتواصلك معنا والإجابة على جميع استفساراتك"}
+            {t("hero.description")}
           </p>
         </div>
       </section>
 
-      {/* Contact Section */}
       <section className="bg-background py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2">
-            {/* Contact Info */}
             <div>
               <h2 className="mb-6 text-2xl font-bold text-foreground">
-                {"معلومات التواصل"}
+                {t("info.title")}
               </h2>
               <p className="mb-8 text-base leading-relaxed text-muted-foreground">
-                {
-                  "يمكنك التواصل معنا عبر أي من الطرق التالية وسنقوم بالرد عليك في أقرب وقت ممكن."
-                }
+                {t("info.description")}
               </p>
 
               <div className="space-y-3">
@@ -113,9 +104,7 @@ export default function ContactPage() {
                     <Mail className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
                   </div>
                   <div>
-                    <p className="font-bold text-foreground">
-                      {"البريد الإلكتروني"}
-                    </p>
+                    <p className="font-bold text-foreground">{t("info.email")}</p>
                     <p className="text-sm text-muted-foreground" dir="ltr">
                       {info.email}
                     </p>
@@ -132,7 +121,7 @@ export default function ContactPage() {
                     <Phone className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
                   </div>
                   <div>
-                    <p className="font-bold text-foreground">{"واتساب"}</p>
+                    <p className="font-bold text-foreground">{t("info.whatsapp")}</p>
                     <p className="text-sm text-muted-foreground" dir="ltr">
                       {info.phone}
                     </p>
@@ -144,19 +133,18 @@ export default function ContactPage() {
                     <Clock className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <p className="font-bold text-foreground">{"ساعات العمل"}</p>
+                    <p className="font-bold text-foreground">{t("info.workingHours")}</p>
                     <p className="text-sm text-muted-foreground">
-                      {"السبت - الخميس: 9 صباحًا - 10 مساءً"}
+                      {t("info.weekdays")}
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      {"الجمعة: 4 مساءً - 10 مساءً"}
+                      {t("info.friday")}
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Contact Form */}
             <div className="rounded-2xl border border-border bg-card p-8 lg:p-10">
               {submitted ? (
                 <div className="flex flex-col items-center justify-center py-12 text-center">
@@ -164,42 +152,42 @@ export default function ContactPage() {
                     <CheckCircle className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="mb-2 text-xl font-bold text-card-foreground">
-                    {"تم إرسال رسالتك بنجاح"}
+                    {t("form.successTitle")}
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    {"سنقوم بالرد عليك في أقرب وقت ممكن. شكرًا لتواصلك معنا."}
+                    {t("form.successDescription")}
                   </p>
                   <Button
                     variant="outline"
                     className="mt-6"
                     onClick={() => setSubmitted(false)}
                   >
-                    {"إرسال رسالة أخرى"}
+                    {t("form.sendAnother")}
                   </Button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <h3 className="mb-2 text-xl font-bold text-card-foreground">
-                    {"أرسل لنا رسالة"}
+                    {t("form.title")}
                   </h3>
 
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="space-y-2">
-                      <Label htmlFor="name">{"الاسم الكامل"}</Label>
+                      <Label htmlFor="name">{t("form.fullName")}</Label>
                       <Input
                         id="name"
                         name="name"
-                        placeholder="أدخل اسمك"
+                        placeholder={t("form.namePlaceholder")}
                         required
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">{"البريد الإلكتروني"}</Label>
+                      <Label htmlFor="email">{t("form.email")}</Label>
                       <Input
                         id="email"
                         name="email"
                         type="email"
-                        placeholder="example@email.com"
+                        placeholder={t("form.emailPlaceholder")}
                         dir="ltr"
                         required
                       />
@@ -207,32 +195,32 @@ export default function ContactPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="phone">{"رقم الهاتف (اختياري)"}</Label>
+                    <Label htmlFor="phone">{t("form.phone")}</Label>
                     <Input
                       id="phone"
                       name="phone"
                       type="tel"
-                      placeholder="+966 50 000 0000"
+                      placeholder={t("form.phonePlaceholder")}
                       dir="ltr"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="subject">{"الموضوع"}</Label>
+                    <Label htmlFor="subject">{t("form.subject")}</Label>
                     <Input
                       id="subject"
                       name="subject"
-                      placeholder="موضوع الرسالة"
+                      placeholder={t("form.subjectPlaceholder")}
                       required
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message">{"الرسالة"}</Label>
+                    <Label htmlFor="message">{t("form.message")}</Label>
                     <Textarea
                       id="message"
                       name="message"
-                      placeholder="اكتب رسالتك هنا..."
+                      placeholder={t("form.messagePlaceholder")}
                       rows={5}
                       required
                     />
@@ -258,7 +246,7 @@ export default function ContactPage() {
                     ) : (
                       <Send className="ml-2 h-4 w-4" />
                     )}
-                    {loading ? "جاري الإرسال..." : "إرسال الرسالة"}
+                    {loading ? t("form.sending") : t("form.send")}
                   </Button>
                 </form>
               )}

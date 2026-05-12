@@ -3,30 +3,30 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
+import { LocaleSwitcher } from "@/components/locale-switcher";
 import Image from "next/image";
 
-const navLinks = [
-  { href: "/", label: "الرئيسية" },
-  { href: "/about", label: "من نحن" },
-  { href: "/programs", label: "البرامج" },
-  // { href: "/teachers", label: "المعلمون" },
-  { href: "/faq", label: "الأسئلة الشائعة" },
-  { href: "/contact", label: "تواصل معنا" },
-];
-
 export default function Navbar() {
+  const t = useTranslations("nav");
   const [isOpen, setIsOpen] = useState(false);
+
+  const navLinks = [
+    { href: "/", label: t("home") },
+    { href: "/about", label: t("about") },
+    { href: "/programs", label: t("programs") },
+    { href: "/faq", label: t("faq") },
+    { href: "/contact", label: t("contact") },
+  ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-md">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
-        {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image src={"/images/logo.png"} alt="Logo" width={50} height={50} />
         </Link>
 
-        {/* Desktop Nav */}
         <div className="hidden items-center gap-8 lg:flex">
           {navLinks.map((link) => (
             <Link
@@ -39,18 +39,17 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-4 lg:flex">
+          <LocaleSwitcher />
           <Button asChild>
-            <Link href="/contact">سجّل الآن</Link>
+            <Link href="/contact">{t("signup")}</Link>
           </Button>
         </div>
 
-        {/* Mobile Toggle */}
         <button
           className="lg:hidden"
           onClick={() => setIsOpen(!isOpen)}
-          aria-label={isOpen ? "إغلاق القائمة" : "فتح القائمة"}
+          aria-label={isOpen ? t("closeMenu") : t("openMenu")}
         >
           {isOpen ? (
             <X className="h-6 w-6 text-foreground" />
@@ -60,7 +59,6 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile Menu */}
       {isOpen && (
         <div className="border-t border-border bg-background lg:hidden">
           <div className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4">
@@ -74,9 +72,10 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <div className="mt-2 border-t border-border pt-4">
+            <div className="mt-2 flex flex-col gap-2 border-t border-border pt-4">
+              <LocaleSwitcher />
               <Button asChild className="w-full">
-                <Link href="/contact">سجّل الآن</Link>
+                <Link href="/contact">{t("signup")}</Link>
               </Button>
             </div>
           </div>

@@ -3,13 +3,14 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { GraduationCap } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 
 export function FreeBookingButton() {
+  const t = useTranslations("freeBooking");
   const [hasClaimed, setHasClaimed] = useState(false);
 
   useEffect(() => {
-    // Simple cookie check
     const checkCookie = () => {
       const claimed = document.cookie
         .split("; ")
@@ -18,8 +19,6 @@ export function FreeBookingButton() {
     };
 
     checkCookie();
-
-    // Also listen for potential changes (if user books in another tab)
     window.addEventListener("focus", checkCookie);
     return () => window.removeEventListener("focus", checkCookie);
   }, []);
@@ -31,7 +30,7 @@ export function FreeBookingButton() {
         disabled
         className="text-muted-foreground italic text-xs"
       >
-        {"لقد استفدت من الحصة المجانية هذا الشهر"}
+        {t("alreadyClaimed")}
       </Button>
     );
   }
@@ -44,7 +43,7 @@ export function FreeBookingButton() {
     >
       <Link href="https://calendly.com/quranikbooking/new-meeting">
         <GraduationCap className="ml-2 h-4 w-4" />
-        {"حصة تجريبية مجانية"}
+        {t("freeTrial")}
       </Link>
     </Button>
   );

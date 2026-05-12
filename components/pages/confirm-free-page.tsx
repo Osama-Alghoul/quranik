@@ -3,19 +3,19 @@
 import { useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { CheckCircle2, Home, Calendar, Clock, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 function ConfirmFreeContent() {
+  const t = useTranslations("confirmFree");
   const searchParams = useSearchParams();
 
-  // Extract details from Calendly redirect URL if available
   const eventName = searchParams.get("event_type_name");
   const inviteeName = searchParams.get("invitee_full_name");
   const startTime = searchParams.get("event_start_time");
 
   useEffect(() => {
-    // Set a cookie that expires in 30 days (1 month)
     const now = new Date();
     const expiry = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
     document.cookie = `free_booking_claimed=true; path=/; expires=${expiry.toUTCString()}; SameSite=Lax`;
@@ -24,7 +24,6 @@ function ConfirmFreeContent() {
   return (
     <main className="min-h-[80vh] flex flex-col items-center justify-center p-4 text-center bg-background">
       <div className="max-w-xl w-full bg-card p-10 rounded-[2rem] border border-border shadow-xl relative overflow-hidden">
-        {/* Decorative elements */}
         <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-10 -mt-10" />
         <div className="absolute bottom-0 left-0 w-24 h-24 bg-accent/5 rounded-tr-full -ml-8 -mb-8" />
 
@@ -36,27 +35,16 @@ function ConfirmFreeContent() {
           </div>
 
           <h1 className="text-3xl font-bold mb-4 text-card-foreground">
-            تم حجز حصتك المجانية بنجاح!
+            {t("title")}
           </h1>
           <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
-            شكراً لاهتمامك ببرامجنا. رجاء قم بالتحقق من تطبيق{" "}
-            <a
-              href="https://play.google.com/store/apps/details?id=com.google.android.calendar&hl=en-US&pli=1"
-              target="_blank"
-              rel="noreferrer"
-              className="text-blue-500 hover:underline"
-            >
-              Google Calendar
-            </a>{" "}
-            لمتابعة موعد الحصة وسنقوم بالتواصل معك قريباً عبر الواتساب لتزويدك
-            بكافة التفاصيل.
+            {t("description")}
           </p>
 
-          {/* Booking Details Summary */}
           {(eventName || inviteeName) && (
             <div className="bg-muted/50 rounded-2xl p-6 mb-10 text-right space-y-4 border border-border/50">
               <h2 className="font-semibold text-primary mb-2 border-b border-border pb-2 inline-block">
-                تفاصيل الحجز:
+                {t("bookingDetails")}
               </h2>
 
               {inviteeName && (
@@ -91,7 +79,7 @@ function ConfirmFreeContent() {
               variant="outline"
             >
               <Link href="/programs">
-                {"استكشف البرامج"}
+                {t("explorePrograms")}
                 <Calendar className="mr-2 h-5 w-5" />
               </Link>
             </Button>
@@ -101,7 +89,7 @@ function ConfirmFreeContent() {
               className="h-12 text-lg rounded-xl shadow-md hover:shadow-lg transition-all order-1 sm:order-2"
             >
               <Link href="/">
-                {"الرئيسية"}
+                {t("home")}
                 <Home className="mr-2 h-5 w-5" />
               </Link>
             </Button>

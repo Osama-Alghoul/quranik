@@ -1,0 +1,531 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "programs": "Programs",
+    "teachers": "Teachers",
+    "faq": "FAQ",
+    "contact": "Contact Us",
+    "signup": "Sign Up Now",
+    "closeMenu": "Close Menu",
+    "openMenu": "Open Menu"
+  },
+  "footer": {
+    "brand": "Quranik",
+    "description": "An online educational academy specializing in Quran and Islamic sciences for children, youth, and adults.",
+    "navigation": "Navigation",
+    "support": "Support",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "copyright": "All Rights Reserved"
+  },
+  "common": {
+    "online": "Online",
+    "monthly": "Monthly",
+    "minutesPerSession": "minutes per session",
+    "sessionsPerMonth": "sessions / month",
+    "price": "Price",
+    "noHiddenFees": "No hidden fees — pay only for the sessions"
+  },
+  "home": {
+    "hero": {
+      "badge": "Specialized Educational Academy",
+      "title": "Learn the Quran with Expert Guides — Online & Structured",
+      "description": "Quranik is an online educational academy specializing in Quran and Islamic sciences for children, youth, and adults, through an organized learning system with progress reports after every session.",
+      "cta": "Get Started",
+      "browsePrograms": "Browse Programs"
+    },
+    "whyQuranik": {
+      "badge": "Why Quranik?",
+      "title": "A Complete & Exceptional Learning Experience",
+      "features": [
+        {
+          "title": "Structured Curriculum & Clear Study Plans",
+          "description": "Carefully designed learning plans tailored to every level, ensuring consistent progress."
+        },
+        {
+          "title": "Certified Teachers with Educational Expertise",
+          "description": "A distinguished group of teachers holding accredited licenses and certifications."
+        },
+        {
+          "title": "Progress Reports After Every Session",
+          "description": "A precise tracking system that measures progress and identifies areas for improvement."
+        },
+        {
+          "title": "Flexible Scheduling & Online Learning",
+          "description": "Choose the time that works best for you and learn from anywhere in the world."
+        }
+      ]
+    },
+    "programsPreview": {
+      "badge": "Our Programs",
+      "title": "Diverse Educational Programs for Everyone"
+    },
+    "howItWorks": {
+      "badge": "How Does the Platform Work?",
+      "title": "Three Simple Steps to Get Started",
+      "steps": [
+        {
+          "title": "Choose the Right Program",
+          "description": "Browse our diverse programs and choose what suits your level and goals."
+        },
+        {
+          "title": "Subscribe & Pay Once",
+          "description": "A simple one-time payment per course with no hidden fees."
+        },
+        {
+          "title": "Attend Your Lessons & Receive Your Reports",
+          "description": "Learn with your teacher and receive detailed performance reports after every session."
+        }
+      ]
+    },
+    "testimonials": {
+      "badge": "Student Reviews",
+      "title": "What Our Students Say",
+      "items": [
+        {
+          "name": "Ahmed Mohammed",
+          "role": "Memorization Student",
+          "quote": "An amazing experience! The teachers are professional and the follow-up after every session has helped me progress noticeably."
+        },
+        {
+          "name": "Fatima Abdullah",
+          "role": "Mother of Two Students",
+          "quote": "My daughters enjoy the sessions so much. The program is well-organized and the reports reassure me about their progress."
+        },
+        {
+          "name": "Omar Khaled",
+          "role": "Tajweed Student",
+          "quote": "I learned the rules of Tajweed in a practical and accessible way. I recommend this platform to everyone."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Begin Your Quran Learning Journey Today",
+      "description": "Join thousands of students learning the Holy Quran with Quranik in an organized and professional way.",
+      "button": "Sign Up Now"
+    }
+  },
+  "about": {
+    "metaTitle": "About Us",
+    "metaDescription": "Learn about Quranik's vision, mission, and values in teaching the Holy Quran through a modern and authentic approach.",
+    "hero": {
+      "title": "About Us",
+      "description": "Discover the story of Quranik and our vision for the future of Quran education"
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To be a leading platform in Quran education and Islamic sciences through a modern approach that unites authenticity with technology, bringing sacred knowledge to every home in the world."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "To provide an organized, clear, and safe learning experience that empowers students to progress with confidence and steadiness on their journey with the Book of Allah, through specialized teachers and a precise follow-up system."
+    },
+    "imageAlt": "Quranic study environment",
+    "values": {
+      "badge": "Our Values",
+      "title": "The Values That Drive Us",
+      "items": [
+        {
+          "title": "Excellence",
+          "description": "We strive to deliver the highest quality in teaching and student follow-up."
+        },
+        {
+          "title": "Integrity",
+          "description": "We carry the trust of teaching the Book of Allah with sincerity and responsibility."
+        },
+        {
+          "title": "Transparency",
+          "description": "We believe in openness regarding our curriculum, pricing, and reports."
+        },
+        {
+          "title": "Continuity",
+          "description": "We build sustainable learning habits that stay with the student throughout their journey."
+        }
+      ]
+    }
+  },
+  "programs": {
+    "metaTitle": "Programs",
+    "metaDescription": "Explore Quranik's diverse programs: Quran memorization, recitation correction, Tajweed, Hadith and Fiqh, and children's programs.",
+    "hero": {
+      "title": "Our Educational Programs",
+      "description": "Diverse and structured programs suitable for all ages and levels"
+    },
+    "audience": "Target Audience",
+    "sessions": "Number of Sessions",
+    "duration": "Session Duration",
+    "subscribe": "Subscribe Now",
+    "details": "Program Details",
+    "notFound": "Program Not Found",
+    "items": [
+      {
+        "slug": "gheras-gaza",
+        "title": "Gheras Gaza",
+        "description": "Your child builds a Quranic generation with the ink of Gaza's resilience",
+        "audience": "Children aged 4–14",
+        "sessions": "4 sessions / month",
+        "duration": "30 minutes per session",
+        "price": "$59"
+      },
+      {
+        "slug": "noor-gaza",
+        "title": "Noor Gaza",
+        "description": "Perfected recitation that illuminates your heart and supports a steadfast teacher",
+        "audience": "Adults",
+        "sessions": "8 sessions / month",
+        "duration": "30 minutes per session",
+        "price": "$99"
+      },
+      {
+        "slug": "sanad-gaza",
+        "title": "Sanad Gaza",
+        "description": "Attain the honor of an Ijazah by being a support for its people",
+        "audience": "Ijazah Seekers",
+        "sessions": "12 sessions / month",
+        "duration": "60 minutes per session",
+        "price": "$149"
+      }
+    ],
+    "detail": {
+      "backToPrograms": "Back to All Programs",
+      "title": "Program Details",
+      "joinPrefix": "Join us in the",
+      "benefitsTitle": "What will you gain from this program?",
+      "benefits": [
+        "Live interactive lessons with specialized teachers",
+        "A personalized learning plan tailored to your level and goals",
+        "Regular progress reports after every session",
+        "A motivating and supportive learning environment",
+        "Flexibility in choosing session times that work for you"
+      ],
+      "joinDescription": ", where we offer you a distinguished learning experience aimed at building a strong and fruitful relationship with the Holy Quran. This program features a well-studied plan and continuous follow-up to ensure the best results.",
+      "contactWhatsapp": "Contact via WhatsApp"
+    }
+  },
+  "faq": {
+    "metaTitle": "FAQ",
+    "metaDescription": "Answers to the most common questions about Quranik's programs, subscriptions, and lessons.",
+    "hero": {
+      "title": "Frequently Asked Questions",
+      "description": "Answers to the most common questions about our services and programs"
+    },
+    "categories": [
+      {
+        "title": "Operational Questions",
+        "description": "Everything parents and decision-makers need to know about our teachers and services.",
+        "items": [
+          {
+            "question": "Who are the teachers at Quranik?",
+            "answer": "A distinguished group of Quran memorizers and licensed scholars from Gaza, selected based on their Tajweed proficiency and modern pedagogical methods."
+          },
+          {
+            "question": "Is the service paid? And why?",
+            "answer": "Yes, it is a paid service with carefully considered subscription fees. The goal is to ensure the project's sustainability and provide a dignified, stable income for our teachers in Gaza, preserving their dignity and supporting their resilience."
+          },
+          {
+            "question": "What age groups are targeted?",
+            "answer": "We target children and young people in the diaspora, with dedicated programs also available for adults who wish to correct their recitation or obtain an Ijazah."
+          }
+        ]
+      },
+      {
+        "title": "Technical Questions",
+        "description": "Information on how lessons are delivered and technical requirements.",
+        "items": [
+          {
+            "question": "How are lessons delivered?",
+            "answer": "Through an interactive online platform that enables direct audio and video communication between teacher and student, with tools for tracking memorization and periodic assessments."
+          },
+          {
+            "question": "Do I need a high-speed internet connection?",
+            "answer": "The platform has been optimized to operate with minimal data consumption at high quality, overcoming connectivity challenges and ensuring uninterrupted sessions."
+          }
+        ]
+      },
+      {
+        "title": "Legal & Privacy Questions",
+        "description": "Our commitments to protecting your data and legal rights.",
+        "items": [
+          {
+            "question": "What is your privacy policy for my children's data?",
+            "answer": "We adhere to the highest global data protection standards. All personal information is encrypted, and sessions are only recorded with written parental consent and solely for quality assurance purposes."
+          },
+          {
+            "question": "Can I cancel my subscription and get a refund?",
+            "answer": "Yes, our Terms of Service clearly outline your cancellation and refund rights within specified timeframes, ensuring fairness for both the subscriber and the teacher."
+          }
+        ]
+      },
+      {
+        "title": "Impact & Credibility",
+        "description": "Transparency of operations and how support reaches those who deserve it in Gaza.",
+        "items": [
+          {
+            "question": "How can I be sure my contribution actually reaches the teacher in Gaza?",
+            "answer": "The platform uses a transparent financial system. Payments are transferred to teachers on a regular basis. We are an institution built on empowering human resources in Gaza — not merely an intermediary."
+          },
+          {
+            "question": "Do you offer a free trial?",
+            "answer": "Yes, we offer a free initial assessment session so the student can get to know the teacher and the curriculum before committing to any paid subscription."
+          }
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "metaTitle": "Contact Us",
+    "metaDescription": "Reach out to Quranik for information about Quran learning programs and enrollment.",
+    "hero": {
+      "title": "Contact Us",
+      "description": "We're happy to hear from you and answer all your inquiries"
+    },
+    "info": {
+      "title": "Contact Information",
+      "description": "You can reach us through any of the following channels and we will respond as soon as possible.",
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "workingHours": "Working Hours",
+      "weekdays": "Saturday – Thursday: 9:00 AM – 10:00 PM",
+      "friday": "Friday: 4:00 PM – 10:00 PM"
+    },
+    "form": {
+      "successTitle": "Your message has been sent successfully",
+      "successDescription": "We will get back to you as soon as possible. Thank you for reaching out.",
+      "sendAnother": "Send Another Message",
+      "title": "Send Us a Message",
+      "fullName": "Full Name",
+      "namePlaceholder": "Enter your name",
+      "email": "Email Address",
+      "emailPlaceholder": "example@email.com",
+      "phone": "Phone Number (optional)",
+      "phonePlaceholder": "+966 50 000 0000",
+      "subject": "Subject",
+      "subjectPlaceholder": "Message subject",
+      "message": "Message",
+      "messagePlaceholder": "Write your message here...",
+      "sending": "Sending...",
+      "send": "Send Message",
+      "securityError": "Please complete the security verification",
+      "genericError": "Something went wrong, please try again later"
+    }
+  },
+  "privacy": {
+    "metaTitle": "Privacy Policy",
+    "metaDescription": "At Quranik, we are committed to the highest standards of transparency and protection of your children's data, ensuring a safe and trustworthy learning environment.",
+    "title": "Privacy Policy",
+    "sections": [
+      {
+        "title": "Introduction",
+        "content": "At Quranik, we believe that trust is the cornerstone of our institution. We do not view your data as numbers — we treat it as a responsibility. As a community service institution, Quranik is committed to the highest standards of transparency in collecting, using, and protecting your data, in order to provide a safe and trustworthy learning environment for your children."
+      },
+      {
+        "title": "1. What Data Do We Collect?",
+        "content": "We collect only the minimum data necessary to provide our educational service, including:",
+        "items": [
+          {
+            "title": "Registration Data:",
+            "content": " Name, email address, phone number, and student information (age, academic level)."
+          },
+          {
+            "title": "Communication Data:",
+            "content": " To ensure effective coordination of lessons between the diaspora and Gaza."
+          },
+          {
+            "title": "Performance Data:",
+            "content": " Teacher notes on student progress, to track memorization and Tajweed development."
+          },
+          {
+            "title": "Payment Data:",
+            "content": " (Not stored on our servers) — processed through secure international payment gateways that protect your financial information."
+          }
+        ]
+      },
+      {
+        "title": "2. How Do We Use Your Data?",
+        "items": [
+          {
+            "title": "Service Delivery:",
+            "content": " To organize study schedules and facilitate communication between students and teachers."
+          },
+          {
+            "title": "Educational Quality:",
+            "content": " To analyze learning performance and develop curricula in ways that benefit the student."
+          },
+          {
+            "title": "Community Impact:",
+            "content": " We use aggregated statistical data (non-personal) to show donors and impact partners how your subscription helps empower teachers in Gaza, without disclosing individual identities."
+          }
+        ]
+      },
+      {
+        "title": "3. Student Data Protection",
+        "content": "We follow strict data protection policies, including:",
+        "items": [
+          "We do not collect any data without the consent of the student or their guardian.",
+          "Communication between teacher and student takes place only through the official platform or approved channels under administrative oversight.",
+          "The use of student data or personal information for any external marketing purposes is strictly prohibited."
+        ]
+      },
+      {
+        "title": "4. Third Parties (Transparency)",
+        "content": "We use technical tools (learning platforms, payment gateways, communication software) to deliver our services. These partners are bound by strict privacy standards and only have access to your data to the extent necessary to complete the service."
+      },
+      {
+        "title": "5. Your Data Rights",
+        "content": "As our partners in this mission, you have the full right to:",
+        "items": [
+          "Access the data held about you or your children.",
+          "Correct any inaccurate information.",
+          "Request the permanent deletion of your data from our records if you wish to end your subscription."
+        ]
+      },
+      {
+        "title": "6. Our Commitment Under Exceptional Circumstances",
+        "content": "We are committed to protecting your data under all circumstances. Even in the event of any emergency in Gaza, your data is stored on protected cloud servers and can only be accessed by the authorized administrative team to ensure continuity of service."
+      }
+    ],
+    "contact": {
+      "title": "Contact",
+      "content": "For any inquiries regarding the Privacy Policy, please contact us via email:"
+    },
+    "lastUpdated": "Last Updated: April 2026"
+  },
+  "terms": {
+    "metaTitle": "Terms & Conditions",
+    "metaDescription": "The terms and conditions of Quranik Educational Institution — our community charter for supporting Gaza's teachers and ensuring quality education for our children.",
+    "title": "Terms & Conditions of Quranik Community Educational Institution",
+    "sections": [
+      {
+        "title": "Introduction",
+        "content": "Quranik is a purposeful community educational institution, founded to bridge the gap between our children in the diaspora and the wellspring of the Holy Quran. Our operating model is not purely commercial — it is a model of \"sustainable empowerment,\" where subscription revenues are directed to supporting educators in Gaza and providing a dignified working environment befitting the teachers and guardians of the Holy Quran under difficult circumstances."
+      },
+      {
+        "title": "1. The Nature of Our Community Relationship",
+        "content": "When you subscribe to Quranik, you are not simply purchasing an educational service — you are contributing to a tangible social impact. Your subscription represents an investment in:",
+        "items": [
+          "Empowering Quran teachers in Gaza — both financially and professionally.",
+          "Ensuring the continuity of education in Palestine despite all challenges.",
+          "Building a bridge of knowledge and values between our children abroad and our people in Gaza."
+        ]
+      },
+      {
+        "title": "2. Fees & Financial Commitment",
+        "items": [
+          "Subscription fees are the primary source of funding that Quranik relies on to sustain the work of our teachers. We are therefore fully committed to transparency in how these revenues are used to support the teaching staff.",
+          "Payments are made periodically and in advance to ensure continuous session scheduling and to secure teachers' monthly compensation."
+        ]
+      },
+      {
+        "title": "3. Academy Commitments (Flexibility Charter Under Exceptional Circumstances)",
+        "content": "We operate from the heart of Gaza, which requires mutual understanding of force majeure circumstances from both sides:",
+        "specialBox": {
+          "title": "Compensation, Not Refunds:",
+          "description": "In the event of power outages, internet disruptions, or any force majeure circumstances beyond the teacher's control, we do not immediately resort to refunds. Instead, the academy is committed to fully compensating for all missed sessions at the earliest available opportunity.",
+          "note": "This principle is part of our social contract with you — guaranteeing the student's right to education and the teacher's right to receive their due compensation for their effort, even if delivery is delayed."
+        }
+      },
+      {
+        "title": "4. Subscription Cancellation",
+        "items": [
+          "If a student wishes to cancel their subscription, we kindly ask for notice at least (7) business days before the start of the new academic cycle.",
+          "We believe in flexibility; therefore, in the event of exceptional personal circumstances, we can temporarily freeze the subscription rather than cancel it, to ensure continued support for the assigned teacher."
+        ]
+      },
+      {
+        "title": "5. Privacy & Data Protection",
+        "content": "As a community educational institution, we regard our students' data as a trust. Sessions are not recorded and no personal data is shared except for the purpose of evaluating educational performance, and only with the explicit consent of the guardian."
+      },
+      {
+        "title": "6. Learning Environment Conduct",
+        "content": "We maintain a respectful learning environment that honors the privacy and difficult circumstances of our teachers in Gaza. We ask parents to instill values of mutual respect in their children toward their teachers."
+      }
+    ],
+    "contact": {
+      "title": "Contact",
+      "content": "For any inquiries regarding the Terms & Conditions, please contact us via email:"
+    },
+    "lastUpdated": "Last Updated: April 2026"
+  },
+  "teachers": {
+    "metaTitle": "Teachers",
+    "metaDescription": "Meet the Quranik team of specialized teachers in Quran and Islamic sciences.",
+    "hero": {
+      "title": "Our Teachers",
+      "description": "A distinguished group of specialized teachers holding accredited licenses and certifications"
+    },
+    "items": [
+      {
+        "name": "Sheikh Ahmed Abdulrahman",
+        "specialty": "Quran Memorization & Tajweed",
+        "experience": "10 years",
+        "bio": "A Quran teacher holding an Ijazah with a connected chain of transmission in the Ten Qira'at, specializing in teaching memorization and Tajweed to Arabic speakers.",
+        "certifications": [
+          "Ijazah in the Ten Qira'at",
+          "Accredited Educational Certificate"
+        ]
+      },
+      {
+        "name": "Ustadh Mohammed Al-Hassan",
+        "specialty": "Recitation Correction",
+        "experience": "8 years",
+        "bio": "A Quran teacher with 8 years of experience in teaching Tajweed and correcting recitation for both Arabic and non-Arabic speakers.",
+        "certifications": [
+          "Ijazah in the narration of Hafs from Asim",
+          "Diploma in Arabic Language Teaching"
+        ]
+      },
+      {
+        "name": "Ustadha Noura Al-Salem",
+        "specialty": "Children's Programs",
+        "experience": "6 years",
+        "bio": "A specialist in teaching Quran to children through interactive and engaging methods, with extensive experience in Islamic education.",
+        "certifications": [
+          "Bachelor's in Islamic Studies",
+          "Certificate in Child Psychology"
+        ]
+      },
+      {
+        "name": "Sheikh Yusuf Al-Omari",
+        "specialty": "Hadith & Fiqh",
+        "experience": "12 years",
+        "bio": "A specialist in teaching Prophetic Hadith and Islamic Fiqh using a clear, scholarly methodology suited to both beginners and advanced students.",
+        "certifications": [
+          "Master's in Hadith Sciences",
+          "Ijazah in the Six Books"
+        ]
+      },
+      {
+        "name": "Ustadha Maryam Al-Zahra",
+        "specialty": "Tajweed & Recitation Improvement",
+        "experience": "7 years",
+        "bio": "A Tajweed teacher specializing in improving Quranic recitation performance, with experience teaching female students of all ages.",
+        "certifications": [
+          "Ijazah in Tajweed",
+          "Diploma in Educational Curriculum"
+        ]
+      },
+      {
+        "name": "Sheikh Abdullah Al-Kareem",
+        "specialty": "Advanced Quran Memorization",
+        "experience": "15 years",
+        "bio": "One of the most prominent teachers in memorization and revision, specializing in preparing advanced students for Quranic Ijazah.",
+        "certifications": [
+          "Advanced Ijazah in Qira'at",
+          "Doctorate in Quran and Islamic Sciences"
+        ]
+      }
+    ]
+  },
+  "confirmFree": {
+    "title": "Your Free Session Has Been Successfully Booked!",
+    "description": "Thank you for your interest in our programs. Please check your Google Calendar app for your session details, and we will contact you soon via WhatsApp with everything you need to know.",
+    "bookingDetails": "Booking Details:",
+    "explorePrograms": "Explore Programs",
+    "home": "Home"
+  },
+  "freeBooking": {
+    "alreadyClaimed": "You have already used your free session this month",
+    "freeTrial": "Free Trial Session"
+  }
+}

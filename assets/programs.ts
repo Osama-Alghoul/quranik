@@ -2,15 +2,12 @@ import {
   Sprout,
   Sun,
   Scroll,
-  Users,
-  GraduationCap,
-  BookOpen,
+  type LucideIcon,
 } from "lucide-react";
 
 export const programs = [
   {
     slug: "gheras-gaza",
-    icon: Sprout,
     title: "غراس غزة",
     description: "ابنك يبني جيلاً قرآنياً بمداد صمود غزة",
     audience: "أطفال 4 - 14 سنة",
@@ -20,7 +17,6 @@ export const programs = [
   },
   {
     slug: "noor-gaza",
-    icon: Sun,
     title: "نور غزة",
     description: "تلاوة متقنة تضيء قلبك وتسند معلماً صامداً",
     audience: "بالغون",
@@ -30,7 +26,6 @@ export const programs = [
   },
   {
     slug: "sanad-gaza",
-    icon: Scroll,
     title: "سند غزة",
     description: "نيل شرف الاجازة السندية بكونك سنداً لأهلها",
     audience: "طالبو الاجازة",
@@ -39,3 +34,13 @@ export const programs = [
     price: "149$",
   },
 ];
+
+const programIconMap: Record<string, LucideIcon> = {
+  "gheras-gaza": Sprout,
+  "noor-gaza": Sun,
+  "sanad-gaza": Scroll,
+};
+
+export function getProgramIcon(slug: string): LucideIcon {
+  return programIconMap[slug] || Sprout;
+}
