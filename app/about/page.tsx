@@ -49,7 +49,7 @@ export default function AboutPage() {
             {"من نحن"}
           </h1>
           <p className="mt-4 text-lg leading-relaxed text-primary-foreground/80">
-            {"تعرف على قصة قرآنيك ورؤيتنا لمستقبل تعليم القرآن الكريم"}
+            منصة قرآنية خرجت من رحاب غزة الحبيبة لتنشر نور العلم في كل مكان
           </p>
         </div>
       </section>
@@ -60,27 +60,32 @@ export default function AboutPage() {
           <div className="grid gap-12 lg:grid-cols-2">
             {/* Vision */}
             <div className="rounded-xl border border-border bg-card p-10">
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
-                <Eye className="h-7 w-7 text-primary" />
+              <div className="flex gap-2 items-center">
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
+                  <Eye className="h-7 w-7 text-primary" />
+                </div>
+                <h2 className="mb-4 text-2xl font-bold text-card-foreground">
+                  {"رؤيتنا"}
+                </h2>
               </div>
-              <h2 className="mb-4 text-2xl font-bold text-card-foreground">
-                {"رؤيتنا"}
-              </h2>
+
               <p className="text-base leading-relaxed text-muted-foreground">
                 {
-                  "أن نكون منصة رائدة في تعليم القرآن الكريم وعلومه بأسلوب عصري يجمع بين الأصالة والتقنية، ونصل بالعلم الشرعي إلى كل بيت في العالم."
+                  "أن نكون منصة رائدة في تعليم القرآن الكريم وعلومه بسواعد معلمي غزة الأكفاء، بأسلوب عصري يجمع بين الأصالة والتقنية، ونصل بالعلم الشرعي إلى كل بيت في العالم."
                 }
               </p>
             </div>
 
             {/* Mission */}
             <div className="rounded-xl border border-border bg-card p-10">
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10">
-                <Target className="h-7 w-7 text-accent" />
+              <div className="flex gap-2 items-center">
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10">
+                  <Target className="h-7 w-7 text-accent" />
+                </div>
+                <h2 className="mb-4 text-2xl font-bold text-card-foreground">
+                  {"رسالتنا"}
+                </h2>
               </div>
-              <h2 className="mb-4 text-2xl font-bold text-card-foreground">
-                {"رسالتنا"}
-              </h2>
               <p className="text-base leading-relaxed text-muted-foreground">
                 {
                   "توفير تجربة تعليمية منظمة، واضحة، وآمنة تساعد الطالب على التقدم بثقة وثبات في رحلته مع كتاب الله، من خلال معلمين متخصصين ونظام متابعة دقيق."

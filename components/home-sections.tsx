@@ -1,16 +1,14 @@
 import Image from "next/image";
-import Link from "next/link";
 import {
   BookOpen,
   GraduationCap,
   ClipboardCheck,
   Calendar,
   ArrowLeft,
+  Clock,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { programs } from "@/assets/programs";
-import { FreeBookingButton } from "@/components/FreeBookingButton";
-
 
 export default function HeroSection() {
   return (
@@ -28,9 +26,6 @@ export default function HeroSection() {
       </div>
 
       <div className="relative mx-auto flex max-w-7xl flex-col items-center px-4 py-24 text-center lg:px-8 lg:py-36">
-        <span className="mb-6 inline-block rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
-          {"أكاديمية تعليمية متخصصة"}
-        </span>
         <h1 className="max-w-4xl text-balance text-3xl font-bold leading-tight text-primary-foreground md:text-5xl lg:text-6xl">
           {"تعلم القرآن الكريم بمرشدين متخصصين - أونلاين وبخطوات منظمة"}
         </h1>
@@ -43,15 +38,13 @@ export default function HeroSection() {
           <Button
             size="lg"
             variant="default"
-            className="bg-accent text-accent-foreground hover:bg-accent/90"
-            asChild
+            className="bg-accent text-accent-foreground hover:bg-accent/90 w-full"
+            disabled
           >
-            <Link href="/contact">
-              ابدأ الآن
-              <ArrowLeft className="mr-2 h-4 w-4" />
-            </Link>
+            قريباً
+            <Clock className="mr-2 h-4 w-4" />
           </Button>
-          <FreeBookingButton />
+          {/* <FreeBookingButton />
           <Button
 
             size="lg"
@@ -60,7 +53,7 @@ export default function HeroSection() {
             asChild
           >
             <Link href="/programs">استعرض البرامج</Link>
-          </Button>
+          </Button> */}
         </div>
       </div>
     </section>
@@ -141,9 +134,8 @@ export function ProgramsPreviewSection() {
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {programs.map((program) => (
-            <Link
+            <div
               key={program.title}
-              href={`/programs/${program.slug}`}
               className="group flex items-start gap-4 rounded-xl border border-border bg-card p-6 transition-all hover:border-accent/30 hover:shadow-md"
             >
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-accent/10">
@@ -162,7 +154,7 @@ export function ProgramsPreviewSection() {
                   {program.description}
                 </p>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
 
@@ -323,18 +315,12 @@ export function CTASection() {
           <Button
             size="lg"
             className="bg-accent text-accent-foreground hover:bg-accent/90"
-            asChild
+            disabled
           >
-            <Link href="/contact">
-              سجّل الآن
-              <ArrowLeft className="mr-2 h-4 w-4" />
-            </Link>
+            قريباً
+            <Clock className="mr-2 h-4 w-4" />
           </Button>
-          <div className="mt-4">
-            <FreeBookingButton />
-          </div>
         </div>
-
       </div>
     </section>
   );

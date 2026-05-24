@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const footerLinks = {
@@ -23,10 +24,14 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent">
-                <span className="text-lg font-bold text-accent-foreground">
-                  ق
-                </span>
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white">
+                <Image
+                  src="/images/logo.png"
+                  alt="Logo"
+                  width={100}
+                  height={100}
+                  className="h-10 w-10 rounded-lg"
+                />
               </div>
               <span className="text-xl font-bold">قرآنيك</span>
             </div>

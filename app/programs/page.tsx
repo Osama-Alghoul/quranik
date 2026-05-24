@@ -1,15 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import {
-  Clock,
-  UserCheck,
-  ArrowLeft,
-  Calendar,
-  DollarSign,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { info } from "@/assets/info";
+import { Clock, UserCheck, Calendar, DollarSign } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "البرامج",
@@ -54,17 +45,14 @@ export default function ProgramsPage() {
               >
                 <div className="p-8 lg:p-10">
                   <div className="flex-1">
-                    <Link
-                      href={`/programs/${program.slug}`}
-                      className="mb-4 flex items-center gap-3"
-                    >
+                    <div className="mb-4 flex items-center gap-3">
                       <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10">
                         <program.icon className="h-7 w-7 text-primary" />
                       </div>
                       <h2 className="mb-3 text-2xl font-bold text-card-foreground hover:text-primary transition-colors">
                         {program.title}
                       </h2>
-                    </Link>
+                    </div>
                     <p className="mb-6 text-base leading-relaxed text-muted-foreground">
                       {program.description}
                     </p>
@@ -116,7 +104,7 @@ export default function ProgramsPage() {
                       </div>
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-3">
+                    {/* <div className="flex flex-wrap items-center gap-3">
                       <Button asChild size="lg" className="px-8">
                         <a
                           href={info.whatsapp(
@@ -140,7 +128,7 @@ export default function ProgramsPage() {
                           {"تفاصيل البرنامج"}
                         </Link>
                       </Button>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
