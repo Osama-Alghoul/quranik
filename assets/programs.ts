@@ -1,11 +1,4 @@
-import {
-  Sprout,
-  Sun,
-  Scroll,
-  Users,
-  GraduationCap,
-  BookOpen,
-} from "lucide-react";
+import { Sprout, Sun, Scroll } from "lucide-react";
 
 export const programs = [
   {
