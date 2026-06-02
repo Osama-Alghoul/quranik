@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | قرآنيك",
   },
   icons: {
-    icon: "/images/logo.png",
+    icon: "/images/logo.jpg",
   },
   description:
     "أكاديمية تعليمية إلكترونية متخصصة في تعليم القرآن وعلومه للأطفال والشباب والبالغين، عبر نظام تعليمي منظم وتقارير متابعة بعد كل لقاء.",
