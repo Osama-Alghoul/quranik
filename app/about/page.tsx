@@ -65,14 +65,14 @@ export default function AboutPage() {
                   <Eye className="h-7 w-7 text-primary" />
                 </div>
                 <h2 className="mb-4 text-2xl font-bold text-card-foreground">
-                  {"رؤيتنا"}
+                  رؤيتنا
                 </h2>
               </div>
 
               <p className="text-base leading-relaxed text-muted-foreground">
-                {
-                  "أن نكون منصة رائدة في تعليم القرآن الكريم وعلومه بسواعد معلمي غزة الأكفاء، بأسلوب عصري يجمع بين الأصالة والتقنية، ونصل بالعلم الشرعي إلى كل بيت في العالم."
-                }
+                أن نكون منصة رائدة في تعليم القرآن الكريم وعلومه بسواعد معلمي
+                غزة الأكفاء، بأسلوب عصري يجمع بين الأصالة والتقنية، ونصل بالعلم
+                الشرعي إلى كل بيت في العالم.
               </p>
             </div>
 
@@ -83,13 +83,13 @@ export default function AboutPage() {
                   <Target className="h-7 w-7 text-accent" />
                 </div>
                 <h2 className="mb-4 text-2xl font-bold text-card-foreground">
-                  {"رسالتنا"}
+                  رسالتنا
                 </h2>
               </div>
               <p className="text-base leading-relaxed text-muted-foreground">
-                {
-                  "توفير تجربة تعليمية منظمة، واضحة، وآمنة تساعد الطالب على التقدم بثقة وثبات في رحلته مع كتاب الله، من خلال معلمين متخصصين ونظام متابعة دقيق."
-                }
+                توفير تجربة تعليمية منظمة، واضحة، وآمنة تساعد الطالب على التقدم
+                بثقة وثبات في رحلته مع كتاب الله، من خلال معلمين متخصصين ونظام
+                متابعة دقيق.
               </p>
             </div>
           </div>
@@ -115,10 +115,10 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="mb-16 text-center">
             <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-wider text-accent">
-              {"قيمنا"}
+              قيمنا
             </span>
             <h2 className="text-balance text-3xl font-bold text-foreground md:text-4xl">
-              {"القيم التي تحركنا"}
+              القيم التي تحركنا
             </h2>
           </div>
 

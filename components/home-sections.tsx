@@ -26,12 +26,12 @@ export default function HeroSection() {
 
       <div className="relative mx-auto flex max-w-7xl flex-col items-center px-4 py-24 text-center lg:px-8 lg:py-36">
         <h1 className="max-w-4xl text-balance text-3xl font-bold leading-tight text-primary-foreground md:text-5xl lg:text-6xl">
-          {"تعلم القرآن الكريم بمرشدين متخصصين - أونلاين وبخطوات منظمة"}
+          تعلم القرآن الكريم بمرشدين متخصصين - أونلاين وبخطوات منظمة
         </h1>
         <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-primary-foreground/80">
-          {
-            "قرآنيك أكاديمية تعليمية إلكترونية متخصصة في تعليم القرآن وعلومه للأطفال والشباب والبالغين، عبر نظام تعليمي منظم وتقارير متابعة بعد كل لقاء."
-          }
+          قرآنيك أكاديمية تعليمية إلكترونية متخصصة في تعليم القرآن وعلومه
+          للأطفال والشباب والبالغين، عبر نظام تعليمي منظم وتقارير متابعة بعد كل
+          لقاء.
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <Button
@@ -88,10 +88,10 @@ export function WhyQuranikSection() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="mb-16 text-center">
           <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-wider text-accent">
-            {"لماذا قرآنيك؟"}
+            لماذا قرآنيك؟
           </span>
           <h2 className="text-balance text-3xl font-bold text-foreground md:text-4xl">
-            {"تجربة تعليمية متكاملة ومميزة"}
+            تجربة تعليمية متكاملة ومميزة
           </h2>
         </div>
 
@@ -124,10 +124,10 @@ export function ProgramsPreviewSection() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="mb-16 text-center">
           <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-wider text-accent">
-            {"برامجنا"}
+            برامجنا
           </span>
           <h2 className="text-balance text-3xl font-bold text-foreground md:text-4xl">
-            {"برامج تعليمية متنوعة تناسب الجميع"}
+            برامج تعليمية متنوعة تناسب الجميع
           </h2>
         </div>
 
@@ -191,10 +191,10 @@ export function HowItWorksSection() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="mb-16 text-center">
           <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-wider text-accent">
-            {"كيف تعمل المنصة؟"}
+            كيف تعمل المنصة؟
           </span>
           <h2 className="text-balance text-3xl font-bold text-foreground md:text-4xl">
-            {"ثلاث خطوات بسيطة للبدء"}
+            ثلاث خطوات بسيطة للبدء
           </h2>
         </div>
 
@@ -246,10 +246,10 @@ export function TestimonialsSection() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="mb-16 text-center">
           <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-wider text-accent">
-            {"آراء الطلاب"}
+            آراء الطلاب
           </span>
           <h2 className="text-balance text-3xl font-bold text-foreground md:text-4xl">
-            {"ماذا يقول طلابنا"}
+            ماذا يقول طلابنا
           </h2>
         </div>
 
